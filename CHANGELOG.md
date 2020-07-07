@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.0] - 2020-07-XX
+
+### Fixed
+
+-   Minor Stylefixes for mobile.
+
 ## [0.3.8] - 2020-07-07
 
 ### Fixed

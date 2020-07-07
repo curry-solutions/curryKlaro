@@ -62,7 +62,7 @@ $mandatory-round: #999;
             text-align: left;
             margin: 0;
             padding: 0;
-            margin-top: 0.7em;
+            margin-top: 1em; //0.7em
         }
 
         .cm-link {
@@ -78,6 +78,8 @@ $mandatory-round: #999;
             margin-right: 0.5em;
             text-decoration: none;
             transition: all 0.2s;
+
+            margin-top: 0.3em;
 
             border: 1px solid $font-color;
             color: $font-color;
