@@ -6,6 +6,10 @@
 
 -   Minor Stylefixes for mobile.
 
+### Added
+
+-   github-pages Page added (git subtree push --prefix dist origin gh-pages).
+
 ## [0.3.8] - 2020-07-07
 
 ### Fixed
