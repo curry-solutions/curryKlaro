@@ -53,7 +53,12 @@ export default class ConsentModal extends React.Component {
         const acceptButton = (
             <button
                 disabled={confirming}
-                className="btn btn-success btn-info btn-accept"
+                className={`btn ${
+                    config.acceptAll && !manager.confirmed
+                        ? ''
+                        : 'btn-success btn-info'
+                }
+                btn-accept`}
                 type="button"
                 onClick={saveAndHide}
             >
@@ -114,7 +119,7 @@ export default class ConsentModal extends React.Component {
                                 target="_blank"
                                 href={
                                     config.poweredBy ||
-                                    'https://klaro.kiprotect.com'
+                                    'https://github.com/DMOEdetc/curryKlaro/'
                                 }
                                 rel="noopener noreferrer"
                             >

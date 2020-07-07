@@ -23,7 +23,8 @@ $button-primary-background: $primary;
 $button-primary-background-hover: $primary-transparent;
 $button-primary-background-active: $primary-semitransparent;
 
-$green: #01440c;
+$mandatory: #4f4f4f;
+$mandatory-round: #999;
 
 .klaro {
     .cookie-modal,
@@ -31,6 +32,7 @@ $green: #01440c;
         @import 'switch.scss';
 
         font-size: 14px;
+        box-shadow: $box-shadow;
 
         .slider {
             box-shadow: $box-shadow;
