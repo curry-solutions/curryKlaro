@@ -342,7 +342,7 @@ $mandatory-round: #999;
         transition: all 0.2s;
         cursor: pointer;
         bottom: 0;
-        right: 20px;
+        right: $cookie-notice-right;
         box-shadow: $box-shadow;
         border-top-left-radius: $border-radius;
         border-top-right-radius: $border-radius;
