@@ -26,6 +26,8 @@ $button-primary-background-active: $primary-semitransparent;
 $t-style: ease-in-out;
 $t-speed: 0.25s;
 
+$cookie-notice-right: 20px;
+
 $mandatory: #4f4f4f;
 $mandatory-round: #999;
 
@@ -292,7 +294,7 @@ $mandatory-round: #999;
             border-radius: $border-radius;
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            right: $cookie-notice-right;
             max-width: 300px;
         }
 
