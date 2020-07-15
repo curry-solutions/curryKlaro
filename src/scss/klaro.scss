@@ -23,6 +23,9 @@ $button-primary-background: $primary;
 $button-primary-background-hover: $primary-transparent;
 $button-primary-background-active: $primary-semitransparent;
 
+$t-style: ease-in-out;
+$t-speed: 0.25s;
+
 $mandatory: #4f4f4f;
 $mandatory-round: #999;
 
@@ -73,22 +76,21 @@ $mandatory-round: #999;
         .btn {
             background: $button-background;
             color: $font-color;
-            border-radius: $border-radius;
-            padding: 0.5em 4em;
-            margin-right: 0.5em;
+            padding: 0.5rem 4rem;
+            margin-right: 0.5rem;
+            margin-top: 0.3rem;
+
             text-decoration: none;
-            transition: all 0.2s;
+            transition: color $t-speed $t-style, background $t-speed $t-style;
 
-            margin-top: 0.3em;
-
+            border-radius: $border-radius;
             border: 1px solid $font-color;
-            color: $font-color;
 
             cursor: pointer;
 
             &.btn-sm {
-                padding: 0.4em;
-                font-size: 1em;
+                padding: 0.4rem;
+                font-size: 1rem;
             }
 
             &.btn-close {
@@ -96,31 +98,24 @@ $mandatory-round: #999;
                 color: $font-color;
             }
 
-            &.btn-success,
-            &.btn-info {
+            &.btn-primary {
                 background: $button-primary-background;
                 color: $bg;
             }
 
             &.btn-right {
                 float: right;
-                margin-left: 0.5em;
+                margin-left: 0.5rem;
                 margin-right: 0;
             }
 
             &.is-active,
-            &:hover,
             &:active {
                 background-color: $button-background-active;
-                color: rgba(255, 255, 255, 0.9);
-                text-decoration: none;
             }
             &:hover,
             &:focus {
                 background-color: $button-background-hover;
-            }
-            &:active {
-                background-color: $button-background-active;
             }
 
             &:disabled {
