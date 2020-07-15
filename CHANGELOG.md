@@ -6,6 +6,10 @@
 
 -   Minor Stylefixes for mobile.
 
+### Changed
+
+-   Buttons are now seperated scss
+
 ### Added
 
 -   github-pages Page added (git subtree push --prefix dist origin gh-pages).

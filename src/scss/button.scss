@@ -1,0 +1,46 @@
+/* The Buttons */
+.btn {
+    background: $button-background;
+    color: $font-color;
+    padding: 0.5rem 4rem;
+
+    text-decoration: none;
+    transition: color $t-speed $t-style, background $t-speed $t-style;
+
+    border-radius: $border-radius;
+    border: 1px solid $font-color;
+
+    cursor: pointer;
+
+    &.btn-sm {
+        padding: 0.4rem;
+        font-size: 1rem;
+    }
+
+    &.btn-close {
+    }
+
+    &.btn-primary {
+        background: $button-primary-background;
+        color: $bg;
+    }
+
+    &.btn-right {
+        float: right;
+        margin-left: 0.5rem;
+        margin-right: 0;
+    }
+
+    &.is-active,
+    &:active {
+        background-color: $button-background-active;
+    }
+    &:hover,
+    &:focus {
+        background-color: $button-background-hover;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+    }
+}
