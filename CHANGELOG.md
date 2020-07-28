@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.4.0] - 2020-07-XX
+## [0.4.0] - 2020-08-XX
 
 ### Fixed
 
@@ -8,7 +8,8 @@
 
 ### Changed
 
--   Buttons are now seperated scss
+-   Buttons are now seperated scss.
+-   Button-SCSS is now SMOOSA-conform.
 
 ### Added
 
