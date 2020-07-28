@@ -12,20 +12,20 @@
 
     cursor: pointer;
 
-    &.btn-sm {
-        padding: 0.4rem;
-        font-size: 1rem;
+    &-close {
     }
 
-    &.btn-close {
-    }
-
-    &.btn-primary {
+    &--primary {
         background: $button-primary-background;
         color: $bg;
     }
 
-    &.btn-right {
+    &--small {
+        padding: 0.4rem;
+        font-size: 1rem;
+    }
+
+    &--right {
         float: right;
         margin-left: 0.5rem;
         margin-right: 0;
