@@ -14,7 +14,11 @@
 
 ### Added
 
--   github-pages Page added (git subtree push --prefix dist origin gh-pages).
+-   github-pages Page added:
+
+```sh
+git subtree push --prefix dist origin gh-pages.
+```
 
 ## [0.3.8] - 2020-07-07
 
