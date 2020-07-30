@@ -1,0 +1,45 @@
+/* The Floating-Button */
+.floating-button {
+    display: block;
+    z-index: 999;
+
+    position: fixed;
+    transition: all 0.2s;
+    cursor: pointer;
+    bottom: 0;
+    right: $cookie-notice-right;
+    box-shadow: $box-shadow;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    text-decoration: none;
+    max-width: 300px;
+    border: $border;
+    color: gray;
+    border-bottom-color: rgb(187, 187, 187);
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom: none;
+    background: $bg;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 7px 14px;
+
+    &.is-active,
+    &:hover,
+    &:active {
+        background-color: $button-background;
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+    }
+    &:hover,
+    &:focus {
+        background-color: $button-background-hover;
+    }
+    &:active {
+        background-color: $button-background-active;
+    }
+}
+
+.floating-button-hidden {
+    display: none !important;
+}

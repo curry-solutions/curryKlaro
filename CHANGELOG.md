@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.4.0] - 2020-07-30
+
+### Fixed
+
+-   Minor Stylefixes for mobile.
+
+### Changed
+
+-   Buttons are now seperated scss.
+-   Headline of Modal is now h2 instead of h1.
+-   Button-SCSS is now SMOOSA-conform. **New CSS-Classnames**
+
+### Added
+
+-   github-pages Page added (git subtree push --prefix dist origin gh-pages).
+
 ## [0.3.8] - 2020-07-07
 
 ### Fixed

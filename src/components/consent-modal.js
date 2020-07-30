@@ -42,7 +42,7 @@ export default class ConsentModal extends React.Component {
             declineButton = (
                 <button
                     disabled={confirming}
-                    className="btn btn-decline btn-right btn-sm btn-danger cn-decline"
+                    className="btn btn--decline btn--small btn-danger btn--right cn-decline"
                     type="button"
                     onClick={declineAndHide}
                 >
@@ -56,9 +56,9 @@ export default class ConsentModal extends React.Component {
                 className={`btn ${
                     config.acceptAll && !manager.confirmed
                         ? ''
-                        : 'btn-success btn-info'
+                        : 'btn--primary btn-primary'
                 }
-                btn-accept`}
+                btn--accept`}
                 type="button"
                 onClick={saveAndHide}
             >
@@ -69,7 +69,7 @@ export default class ConsentModal extends React.Component {
             acceptAllButton = (
                 <button
                     disabled={confirming}
-                    className="btn btn-success btn-accept-all"
+                    className="btn btn--primary btn--accept btn--accept-all"
                     type="button"
                     onClick={acceptAndHide}
                 >
@@ -95,9 +95,9 @@ export default class ConsentModal extends React.Component {
                 <div className="cm-modal">
                     <div className="cm-header">
                         {closeLink}
-                        <h1 className="title">
+                        <h2 className="title">
                             {t(['consentModal', 'title'])}
-                        </h1>
+                        </h2>
                         <p>
                             {t(['consentModal', 'description'])} &nbsp;
                             {t(['consentModal', 'privacyPolicy', 'text'], {
