@@ -10,6 +10,7 @@
 
 -   Buttons are now seperated scss.
 -   Button-SCSS is now SMOOSA-conform.
+-   Headline of Modal is now h2 instead of h1.
 
 ### Added
 
