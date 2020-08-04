@@ -42,7 +42,7 @@ export default class ConsentModal extends React.Component {
             declineButton = (
                 <button
                     disabled={confirming}
-                    className="btn btn--decline btn--small btn-danger btn--right cn-decline"
+                    className="btn btn--decline btn--small btn--right cn-decline"
                     type="button"
                     onClick={declineAndHide}
                 >
