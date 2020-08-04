@@ -87,7 +87,7 @@ export default class ConsentNotice extends React.Component {
             ''
         ) : (
             <button
-                className="btn btn--small btn-danger cn-decline"
+                className="btn btn--small cn-decline"
                 type="button"
                 onClick={this.declineAndHide}
             >

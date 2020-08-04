@@ -219,6 +219,10 @@ $mandatory-round: #999;
                         &.cm-toggle-all {
                             border-top: $border;
                             padding-top: 1em;
+
+                            &.is-hidden {
+                                display: none;
+                            }
                         }
 
                         span.cm-app-title {
