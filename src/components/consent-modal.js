@@ -69,7 +69,7 @@ export default class ConsentModal extends React.Component {
             acceptAllButton = (
                 <button
                     disabled={confirming}
-                    className="btn btn--primary btn--accept btn--accept-all"
+                    className="btn btn-primary btn--primary btn--accept btn--accept-all"
                     type="button"
                     onClick={acceptAndHide}
                 >
