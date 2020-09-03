@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.1] - 2020-09-03
+
+### Changed
+
+-   Removed unused css-Classes.
+
 ## [0.4.0] - 2020-07-30
 
 ### Fixed
