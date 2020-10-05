@@ -2371,7 +2371,7 @@ a.box:active {
 .buttons.is-centered {
     justify-content: center;
 }
-.buttons.btn--right {
+.buttons.btn-right {
     justify-content: flex-end;
 }
 .container {
@@ -3436,13 +3436,13 @@ a.box:active {
     flex-grow: 1;
     max-width: none;
 }
-.file.btn--right {
+.file.btn-right {
     justify-content: flex-end;
 }
-.file.btn--right .file-cta {
+.file.btn-right .file-cta {
     border-radius: 0 4px 4px 0;
 }
-.file.btn--right .file-name {
+.file.btn-right .file-name {
     border-radius: 4px 0 0 4px;
     border-width: 1px 0 1px 1px;
     order: -1;
@@ -3817,7 +3817,7 @@ a.box:active {
 .control.has-icons-right .select select {
     padding-right: 2.25em;
 }
-.control.has-icons-right .icon.btn--right {
+.control.has-icons-right .icon.btn-right {
     right: 0;
 }
 .control.is-loading::after {
@@ -4336,13 +4336,13 @@ a.box:active {
     margin-right: 0.25rem;
     margin-left: 0.25rem;
 }
-.tags.btn--right {
+.tags.btn-right {
     justify-content: flex-end;
 }
-.tags.btn--right .tag:not(:first-child) {
+.tags.btn-right .tag:not(:first-child) {
     margin-left: 0.5rem;
 }
-.tags.btn--right .tag:not(:last-child) {
+.tags.btn-right .tag:not(:last-child) {
     margin-right: 0;
 }
 .tag:not(body) {
@@ -4632,8 +4632,8 @@ a.tag:hover {
 .breadcrumb.is-centered ul {
     justify-content: center;
 }
-.breadcrumb.btn--right ol,
-.breadcrumb.btn--right ul {
+.breadcrumb.btn-right ol,
+.breadcrumb.btn-right ul {
     justify-content: flex-end;
 }
 .breadcrumb.is-small {
@@ -4726,7 +4726,7 @@ a.tag:hover {
 .dropdown.is-hoverable:hover .dropdown-menu {
     display: block;
 }
-.dropdown.btn--right .dropdown-menu {
+.dropdown.btn-right .dropdown-menu {
     left: auto;
     right: 0;
 }
@@ -6097,7 +6097,7 @@ a.navbar-item:hover {
         transition-property: opacity, transform;
         transition-property: opacity, transform, -webkit-transform;
     }
-    .navbar-dropdown.btn--right {
+    .navbar-dropdown.btn-right {
         left: auto;
         right: 0;
     }
@@ -6287,13 +6287,13 @@ a.navbar-item:hover {
     .pagination.is-centered .pagination-next {
         order: 3;
     }
-    .pagination.btn--right .pagination-previous {
+    .pagination.btn-right .pagination-previous {
         order: 1;
     }
-    .pagination.btn--right .pagination-next {
+    .pagination.btn-right .pagination-next {
         order: 2;
     }
-    .pagination.btn--right .pagination-list {
+    .pagination.btn-right .pagination-list {
         justify-content: flex-end;
         order: 3;
     }
@@ -6446,7 +6446,7 @@ label.panel-block:hover {
     padding-left: 0.75em;
     padding-right: 0.75em;
 }
-.tabs ul.btn--right {
+.tabs ul.btn-right {
     justify-content: flex-end;
     padding-left: 0.75em;
 }
@@ -6459,7 +6459,7 @@ label.panel-block:hover {
 .tabs.is-centered ul {
     justify-content: center;
 }
-.tabs.btn--right ul {
+.tabs.btn-right ul {
     justify-content: flex-end;
 }
 .tabs.is-boxed a {
