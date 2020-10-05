@@ -96,13 +96,24 @@ export default class ConsentNotice extends React.Component {
         );
 
         const acceptButton = config.acceptAll ? (
-            <button
-                className="btn btn--small btn--primary btn-primary cn-acceptAll"
-                type="button"
-                onClick={this.acceptAndHide}
-            >
-                {t(['acceptAll'])}
-            </button>
+            <>
+                <button
+                    className="btn btn--small btn--primary btn-primary cn-acceptAll"
+                    type="button"
+                    onClick={this.acceptAndHide}
+                >
+                    {t(['acceptAll'])}
+                </button>
+                {config.acceptDefault && (
+                    <button
+                        className="btn btn--small btn--primary btn-primary cn-OK"
+                        type="button"
+                        onClick={this.saveAndHide}
+                    >
+                        {t(['ok'])}
+                    </button>
+                )}
+            </>
         ) : (
             <button
                 className="btn btn--small btn--primary btn-primary cn-OK"
