@@ -2,6 +2,12 @@
 
 ## [0.4.1] - 2020-09-03
 
+### Added
+
+-   Possibility to show 'Accept All' and 'Accept' Button at once in Notice.
+
+## [0.4.1] - 2020-09-03
+
 ### Changed
 
 -   Removed unused css-Classes.
