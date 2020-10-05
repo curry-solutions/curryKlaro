@@ -87,7 +87,7 @@ export default class ConsentNotice extends React.Component {
             ''
         ) : (
             <button
-                className="btn btn--small cn-decline"
+                className="btn btn-sm cn-decline"
                 type="button"
                 onClick={this.declineAndHide}
             >
@@ -98,7 +98,7 @@ export default class ConsentNotice extends React.Component {
         const acceptButton = config.acceptAll ? (
             <>
                 <button
-                    className="btn btn--small btn--primary btn-primary cn-acceptAll"
+                    className="btn btn-sm btn-primary btn-primary cn-acceptAll"
                     type="button"
                     onClick={this.acceptAndHide}
                 >
@@ -106,7 +106,7 @@ export default class ConsentNotice extends React.Component {
                 </button>
                 {config.acceptDefault && (
                     <button
-                        className="btn btn--small btn--primary btn-primary cn-OK"
+                        className="btn btn-sm btn-primary btn-primary cn-OK"
                         type="button"
                         onClick={this.saveAndHide}
                     >
@@ -116,7 +116,7 @@ export default class ConsentNotice extends React.Component {
             </>
         ) : (
             <button
-                className="btn btn--small btn--primary btn-primary cn-OK"
+                className="btn btn-sm btn-primary btn-primary cn-OK"
                 type="button"
                 onClick={this.saveAndHide}
             >

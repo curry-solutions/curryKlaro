@@ -42,7 +42,7 @@ export default class ConsentModal extends React.Component {
             declineButton = (
                 <button
                     disabled={confirming}
-                    className="btn btn--decline btn--small btn--right cn-decline"
+                    className="btn btn-decline btn-sm btn-right cn-decline"
                     type="button"
                     onClick={declineAndHide}
                 >
@@ -56,9 +56,9 @@ export default class ConsentModal extends React.Component {
                 className={`btn ${
                     config.acceptAll && !manager.confirmed
                         ? ''
-                        : 'btn--primary btn-primary'
+                        : 'btn-primary btn-primary'
                 }
-                btn--accept`}
+                btn-accept`}
                 type="button"
                 onClick={saveAndHide}
             >
@@ -69,7 +69,7 @@ export default class ConsentModal extends React.Component {
             acceptAllButton = (
                 <button
                     disabled={confirming}
-                    className="btn btn-primary btn--primary btn--accept btn--accept-all"
+                    className="btn btn-primary btn-primary btn-accept btn-accept-all"
                     type="button"
                     onClick={acceptAndHide}
                 >

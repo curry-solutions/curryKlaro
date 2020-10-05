@@ -5,6 +5,7 @@
 ### Added
 
 -   Possibility to show 'Accept All' and 'Accept' Button at once in Notice.
+-   Removed SMOOSA to stay compatible with origin **New CSS-Classnames**
 
 ## [0.4.1] - 2020-09-03
 
