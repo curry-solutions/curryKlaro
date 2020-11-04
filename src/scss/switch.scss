@@ -17,8 +17,8 @@
 .cm-app-input.required:checked + .cm-app-label {
     .slider {
         //opacity: 0.8;
-        background-color: $mandatory;
-        //background-color: $primary;
+        //background-color: $mandatory;
+        background-color: $primary;
         cursor: not-allowed;
 
         &:after {
