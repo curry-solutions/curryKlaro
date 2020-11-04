@@ -4,24 +4,41 @@
     display: inline-block;
     width: 50px;
     height: 30px;
+
+    .slider {
+        //box-shadow: $box-shadow;
+    }
 }
 
 .cm-app-input:checked + .cm-app-label .slider {
     background-color: $primary;
 }
 
-.cm-app-input.required:checked + .cm-app-label .slider {
-    opacity: 0.8;
-    background-color: $mandatory;
-    cursor: not-allowed;
+.cm-app-input.required:checked + .cm-app-label {
+    .slider {
+        //opacity: 0.8;
+        background-color: $mandatory;
+        //background-color: $primary;
+        cursor: not-allowed;
 
-    &:before {
-        background-color: $mandatory-round !important;
+        &:after {
+            position: absolute;
+            content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>');
+            display: block;
+            height: 20px;
+            width: 100%;
+            text-align: center;
+            bottom: 5px;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+        }
     }
-}
 
-.slider {
-    box-shadow: $box-shadow;
+    .round {
+        &:before {
+            display: none;
+        }
+    }
 }
 
 .cm-app-input {
@@ -71,7 +88,7 @@
     }
 
     input:focus + .slider {
-        box-shadow: 0 0 1px $primary;
+        //box-shadow: 0 0 1px $primary;
     }
 
     input:checked + .slider:before {
@@ -81,11 +98,11 @@
     }
 }
 
-.cm-app-input:focus + .cm-app-label .slider {
+/* .cm-app-input:focus + .cm-app-label .slider {
     box-shadow: 0 4px 6px 0 rgba(125, 125, 125, 0.2),
-        5px 5px 10px 0 rgba(125, 125, 125, 0.19);
-}
-
+        5px 5px 10px 0 rgba(125, 125, 125, 0.19); 
+} */
+ 
 .cm-app-input:checked + .cm-app-label .slider:before {
     -webkit-transform: translateX(20px);
     -ms-transform: translateX(20px);
