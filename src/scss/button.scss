@@ -1,7 +1,7 @@
 /* The Buttons */
 .btn {
     background: $button-background;
-    color: $font-color;
+    color: $bg;
     padding: 0.5rem 4rem;
 
     text-decoration: none;
@@ -19,6 +19,8 @@
         background: $button-primary-background;
         color: $bg;
     }
+
+    &-accept {}
 
     &-small {
         padding: 0.4rem;
