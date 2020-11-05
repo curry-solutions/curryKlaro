@@ -31,7 +31,7 @@ $cookie-notice-right: 20px;
 $mandatory: #4f4f4f;
 $mandatory-round: #999;
 
-$gutter: 5em;
+$klaroGutter: 5em;
 
 .klaro {
     .cookie-modal,
@@ -107,7 +107,7 @@ $gutter: 5em;
                 border-radius: $border-radius;
                 position: relative;
                 margin: 0 auto;
-                max-width: calc(640px + #{$gutter} - 1em);
+                max-width: calc(640px + #{$klaroGutter} - 1em);
                 height: auto;
                 width: auto;
             }
@@ -140,7 +140,7 @@ $gutter: 5em;
             }
 
             .cm-footer {
-                padding: $gutter $gutter 1em $gutter;
+                padding: $klaroGutter $klaroGutter 1em $klaroGutter;
                 border-top: $border;
 
                 &-buttons {
@@ -157,7 +157,7 @@ $gutter: 5em;
 
                 .cm-powered-by {
                     font-size: 0.8em;
-                    padding-top: calc(4px + #{$gutter} - 1em);
+                    padding-top: calc(4px + #{$klaroGutter} - 1em);
                     text-align: center;
 
                     a {
@@ -167,7 +167,7 @@ $gutter: 5em;
             }
 
             .cm-header {
-                padding: $gutter;
+                padding: $klaroGutter;
                 // padding-right: 24px;
                 border-bottom: $border;
                 h1 {
@@ -181,7 +181,7 @@ $gutter: 5em;
             }
 
             .cm-body {
-                padding: $gutter;
+                padding: $klaroGutter;
                 ul {
                     display: block;
                 }
@@ -267,7 +267,7 @@ $gutter: 5em;
             margin-right: 0;
             bottom: 0;
 
-            padding: $gutter;
+            padding: $klaroGutter;
             padding-top: 0;
 
             p {
