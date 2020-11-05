@@ -1,34 +1,3 @@
-<<<<<<< HEAD
-@import 'modal';
-@import 'vars';
-
-%btn-blue {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: 0.4375rem 0.875rem;
-    //font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 2px;
-
-    background-color: $primary;
-    border-color: $primary;
-    &:hover {
-        background-color: $primary-lighter;
-        border-color: $primary-lighter;
-    }
-    &.disabled,
-    &:disabled {
-        opacity: 1; // Standard Opacity sieht bei der Map blöd aus
-        background-color: mix(lightgrey, $primary-lighter, 50%);
-        cursor: default;
-    }
-}
-=======
 $primary: #00439a;
 $primary-transparent: rgba(24, 60, 107, 0.6);
 $primary-semitransparent: rgba(24, 60, 107, 0.8);
@@ -56,7 +25,6 @@ $button-primary-background-active: $primary-semitransparent;
 
 $t-style: ease-in-out;
 $t-speed: 0.25s;
->>>>>>> dc192d6... Designanpassungen
 
 .klaro {
     @import 'floating-button';
@@ -411,7 +379,13 @@ $t-speed: 0.25s;
                         position: relative;
                         line-height: 20px;
                         vertical-align: middle;
+<<<<<<< HEAD
                         padding-left: map-get($cm-whitespace, lg);
+=======
+                        padding-left: 74px;
+                        margin-top: 32px;
+
+>>>>>>> ccd1a78... Styling
                         min-height: 40px;
 
                         &:first-child {
@@ -436,18 +410,28 @@ $t-speed: 0.25s;
                         span.cm-list-title {
                             font-weight: 600;
 <<<<<<< HEAD
+<<<<<<< HEAD
                             display: inline;
 =======
+=======
+                            font-size: 1rem;
+>>>>>>> ccd1a78... Styling
                             color: $primary;
 >>>>>>> dc192d6... Designanpassungen
                         }
 
                         span.cm-opt-out,
                         span.cm-required {
+<<<<<<< HEAD
                             padding-left: 0.6em;
                             font-size: 0.8em;
                             color: $cm-font-color-dark-deemphasized;
                             display: inline;
+=======
+                            padding-left: 0.2em;
+                            font-size: 0.8rem;
+                            color: $font-color-deemphasized;
+>>>>>>> ccd1a78... Styling
                         }
                     }
                 }
