@@ -270,7 +270,7 @@ var klaroConfig = {
 
             // If "required" is set to true, Klaro will not allow this service to
             // be disabled by the user.
-            required: false,
+            required: true,
 
             // If "optOut" is set to true, Klaro will load this service even before
             // the user gave explicit consent.
