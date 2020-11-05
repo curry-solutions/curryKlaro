@@ -31,6 +31,8 @@ $cookie-notice-right: 20px;
 $mandatory: #4f4f4f;
 $mandatory-round: #999;
 
+$gutter: 5em;
+
 .klaro {
     .cookie-modal,
     .cookie-notice {
@@ -105,7 +107,7 @@ $mandatory-round: #999;
                 border-radius: $border-radius;
                 position: relative;
                 margin: 0 auto;
-                max-width: 640px;
+                max-width: calc(640px + #{$gutter} - 1em);
                 height: auto;
                 width: auto;
             }
@@ -138,7 +140,7 @@ $mandatory-round: #999;
             }
 
             .cm-footer {
-                padding: 1em;
+                padding: $gutter $gutter 1em $gutter;
                 border-top: $border;
 
                 &-buttons {
@@ -155,7 +157,7 @@ $mandatory-round: #999;
 
                 .cm-powered-by {
                     font-size: 0.8em;
-                    padding-top: 4px;
+                    padding-top: calc(4px + #{$gutter} - 1em);
                     text-align: center;
 
                     a {
@@ -165,8 +167,8 @@ $mandatory-round: #999;
             }
 
             .cm-header {
-                padding: 1em;
-                padding-right: 24px;
+                padding: $gutter;
+                // padding-right: 24px;
                 border-bottom: $border;
                 h1 {
                     margin: 0;
@@ -179,7 +181,7 @@ $mandatory-round: #999;
             }
 
             .cm-body {
-                padding: 1em;
+                padding: $gutter;
                 ul {
                     display: block;
                 }
@@ -265,7 +267,7 @@ $mandatory-round: #999;
             margin-right: 0;
             bottom: 0;
 
-            padding: 1em;
+            padding: $gutter;
             padding-top: 0;
 
             p {
