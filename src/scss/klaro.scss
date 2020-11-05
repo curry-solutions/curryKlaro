@@ -1,4 +1,4 @@
-$primary: #00439A;
+$primary: #00439a;
 $primary-transparent: rgba(24, 60, 107, 0.6);
 $primary-semitransparent: rgba(24, 60, 107, 0.8);
 
@@ -6,7 +6,7 @@ $box-shadow: 0px 5px 15px #00000029;
 $border-radius: 2px;
 $border: 1px solid #555;
 
-$font-color: #4f4f4f;
+$font-color: #525556;
 $font-color-transparent: rgba(79, 69, 69, 0.55);
 $font-color-semitransparent: rgba(79, 69, 69, 0.7);
 
@@ -16,8 +16,8 @@ $font-color-link: #00439a;
 $bg: white;
 $bg-transparent: rgba(0, 0, 0, 0.5);
 
-$button-background: #4F4F4F;
-$button-background-hover: $font-color-transparent;
+$button-background: $primary;
+$button-background-hover: #4f4f4f;
 $button-background-active: $font-color-semitransparent;
 $button-primary-background: $primary;
 $button-primary-background-hover: $primary-transparent;
@@ -46,10 +46,14 @@ $klaroGutter: 5em;
             text-decoration: none;
         }
 
+        h1,
+        h2 {
+            color: $primary;
+            font-size: 28px;
+        }
+
         p,
         strong,
-        h1,
-        h2,
         ul,
         li {
             font-family: inherit;
@@ -124,10 +128,13 @@ $klaroGutter: 5em;
             color: $font-color;
 
             .hide {
-                border: none;
+                border: 1px solid #9c9fa1;
+                border-radius: 2px;
                 background: none;
+                width: 37px;
+                height: 37px;
                 svg {
-                    stroke: $font-color;
+                    stroke: #9c9fa1;
                 }
                 position: absolute;
                 top: 20px;
@@ -225,6 +232,7 @@ $klaroGutter: 5em;
 
                         span.cm-app-title {
                             font-weight: 600;
+                            color: $primary;
                         }
 
                         span.cm-opt-out,
