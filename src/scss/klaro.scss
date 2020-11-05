@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import 'modal';
 @import 'vars';
 
@@ -27,6 +28,35 @@
         cursor: default;
     }
 }
+=======
+$primary: #00439a;
+$primary-transparent: rgba(24, 60, 107, 0.6);
+$primary-semitransparent: rgba(24, 60, 107, 0.8);
+
+$box-shadow: 0px 5px 15px #00000029;
+$border-radius: 2px;
+$border: 1px solid #555;
+
+$font-color: #525556;
+$font-color-transparent: rgba(79, 69, 69, 0.55);
+$font-color-semitransparent: rgba(79, 69, 69, 0.7);
+
+$font-color-deemphasized: #999;
+$font-color-link: #00439a;
+
+$bg: white;
+$bg-transparent: rgba(0, 0, 0, 0.5);
+
+$button-background: $primary;
+$button-background-hover: #4f4f4f;
+$button-background-active: $font-color-semitransparent;
+$button-primary-background: $primary;
+$button-primary-background-hover: $primary-transparent;
+$button-primary-background-active: $primary-semitransparent;
+
+$t-style: ease-in-out;
+$t-speed: 0.25s;
+>>>>>>> dc192d6... Designanpassungen
 
 .klaro {
     @import 'floating-button';
@@ -55,10 +85,14 @@
             text-decoration: none;
         }
 
+        h1,
+        h2 {
+            color: $primary;
+            font-size: 28px;
+        }
+
         p,
         strong,
-        h1,
-        h2,
         ul,
         li {
             font-family: inherit;
@@ -183,6 +217,7 @@
             }
 
             .hide {
+<<<<<<< HEAD
                 border-style: none;
                 background: none;
                 position: absolute;
@@ -193,6 +228,15 @@
 
                 svg {
                     stroke: $cm-font-color-dark;
+=======
+                border: 1px solid #9c9fa1;
+                border-radius: 2px;
+                background: none;
+                width: 37px;
+                height: 37px;
+                svg {
+                    stroke: #9c9fa1;
+>>>>>>> dc192d6... Designanpassungen
                 }
             }
 
@@ -391,7 +435,11 @@
 
                         span.cm-list-title {
                             font-weight: 600;
+<<<<<<< HEAD
                             display: inline;
+=======
+                            color: $primary;
+>>>>>>> dc192d6... Designanpassungen
                         }
 
                         span.cm-opt-out,
