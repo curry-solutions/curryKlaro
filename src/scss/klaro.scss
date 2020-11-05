@@ -185,7 +185,6 @@ $t-speed: 0.25s;
             }
 
             .hide {
-<<<<<<< HEAD
                 border-style: none;
                 background: none;
                 position: absolute;
@@ -196,15 +195,6 @@ $t-speed: 0.25s;
 
                 svg {
                     stroke: $cm-font-color-dark;
-=======
-                border: 1px solid #9c9fa1;
-                border-radius: 2px;
-                background: none;
-                width: 37px;
-                height: 37px;
-                svg {
-                    stroke: #9c9fa1;
->>>>>>> dc192d6... Designanpassungen
                 }
             }
 
@@ -379,13 +369,7 @@ $t-speed: 0.25s;
                         position: relative;
                         line-height: 20px;
                         vertical-align: middle;
-<<<<<<< HEAD
                         padding-left: map-get($cm-whitespace, lg);
-=======
-                        padding-left: 74px;
-                        margin-top: 32px;
-
->>>>>>> ccd1a78... Styling
                         min-height: 40px;
 
                         &:first-child {
@@ -487,7 +471,15 @@ $t-speed: 0.25s;
             margin-right: 0;
             bottom: 0;
 
+<<<<<<< HEAD
             padding: 1em;
+=======
+            @media (min-width: 1024px) {
+                padding: $klaroGutter;
+            }
+            padding: 1em;
+
+>>>>>>> cf55ff5... Fixes for small devices
             padding-top: 0;
 
             p {
