@@ -6,6 +6,18 @@ curryKlaro [klɛro] is a simple consent manager that helps you to be transparent
 
 **You can have a look on curryKlaro on our [Live-Demo](https://dmoedetc.github.io/curryKlaro/).**
 
+## Table of contents
+
+-   [Advantages](#Advantages)
+-   [Getting started](#Getting-started)
+-   [Managing third-party apps/trackers](#Managing-third-party-apps/trackers)
+-   [Configuration file](#Configuration-file)
+-   [Building Klaro from scratch](#Building-Klaro-from-scratch)
+-   [Klaro functions](#Klarofunctions)
+-   [Contributing](#Contributing)
+-   [License & third-party libraries](#License-&-third-party-libraries)
+-   [Troubleshooting](#Troubleshooting)
+
 ## Advantages
 
 -   **Free and Open Source**: No hidden fees, subscriptions or restrictions.
