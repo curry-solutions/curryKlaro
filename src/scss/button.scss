@@ -1,14 +1,14 @@
 /* The Buttons */
 .btn {
     background: $button-background;
-    color: $font-color;
+    color: $bg;
     padding: 0.5rem 4rem;
 
     text-decoration: none;
     transition: color $t-speed $t-style, background $t-speed $t-style;
 
     border-radius: $border-radius;
-    border: 1px solid $font-color;
+    border: 1px solid;
 
     cursor: pointer;
 
@@ -19,6 +19,8 @@
         background: $button-primary-background;
         color: $bg;
     }
+
+    &-accept {}
 
     &-small {
         padding: 0.4rem;

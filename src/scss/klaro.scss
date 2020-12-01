@@ -1,9 +1,9 @@
-$primary: #183c6b;
+$primary: #00439A;
 $primary-transparent: rgba(24, 60, 107, 0.6);
 $primary-semitransparent: rgba(24, 60, 107, 0.8);
 
-$box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
-$border-radius: 4px;
+$box-shadow: 0px 5px 15px #00000029;
+$border-radius: 2px;
 $border: 1px solid #555;
 
 $font-color: #4f4f4f;
@@ -16,7 +16,7 @@ $font-color-link: #00439a;
 $bg: white;
 $bg-transparent: rgba(0, 0, 0, 0.5);
 
-$button-background: rgba(255, 255, 255, 0.5);
+$button-background: #4F4F4F;
 $button-background-hover: $font-color-transparent;
 $button-background-active: $font-color-semitransparent;
 $button-primary-background: $primary;
@@ -31,6 +31,8 @@ $cookie-notice-right: 20px;
 $mandatory: #4f4f4f;
 $mandatory-round: #999;
 
+$klaroGutter: 5em;
+
 .klaro {
     .cookie-modal,
     .cookie-notice {
@@ -38,10 +40,6 @@ $mandatory-round: #999;
 
         font-size: 14px;
         box-shadow: $box-shadow;
-
-        .slider {
-            box-shadow: $box-shadow;
-        }
 
         a {
             color: $font-color-link;
@@ -109,7 +107,7 @@ $mandatory-round: #999;
                 border-radius: $border-radius;
                 position: relative;
                 margin: 0 auto;
-                max-width: 640px;
+                max-width: calc(640px + #{$klaroGutter} - 1em);
                 height: auto;
                 width: auto;
             }
@@ -142,7 +140,7 @@ $mandatory-round: #999;
             }
 
             .cm-footer {
-                padding: 1em;
+                padding: $klaroGutter $klaroGutter 1em $klaroGutter;
                 border-top: $border;
 
                 &-buttons {
@@ -159,7 +157,7 @@ $mandatory-round: #999;
 
                 .cm-powered-by {
                     font-size: 0.8em;
-                    padding-top: 4px;
+                    padding-top: calc(4px + #{$klaroGutter} - 1em);
                     text-align: center;
 
                     a {
@@ -169,8 +167,8 @@ $mandatory-round: #999;
             }
 
             .cm-header {
-                padding: 1em;
-                padding-right: 24px;
+                padding: $klaroGutter;
+                // padding-right: 24px;
                 border-bottom: $border;
                 h1 {
                     margin: 0;
@@ -183,7 +181,7 @@ $mandatory-round: #999;
             }
 
             .cm-body {
-                padding: 1em;
+                padding: $klaroGutter;
                 ul {
                     display: block;
                 }
@@ -269,7 +267,7 @@ $mandatory-round: #999;
             margin-right: 0;
             bottom: 0;
 
-            padding: 1em;
+            padding: $klaroGutter;
             padding-top: 0;
 
             p {
