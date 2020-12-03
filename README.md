@@ -91,16 +91,14 @@ If you want to customize Klaro or extend it, you can build it from scratch using
 
 ```sh
 npm install
-npm run-script make-dev #will run a development server
-npm run-script make #will build the production version with included styling
-npm run-script make-css #will build the production version with seperated css
+npm start #will run a development server
+npm run-script build #will build the production version with included styling
 ```
 
 If the npm installation failed or the make-script does not work try
 
 ```sh
-npm run-script clean-nodes #will remove the node_modules folder
-npm install
+npm run-script reinstall #will remove the node_modules folder and reinstall dependencies
 ```
 
 # Klaro functions
