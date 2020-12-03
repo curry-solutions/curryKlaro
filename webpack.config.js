@@ -98,7 +98,7 @@ if (SEPARATE_CSS) {
     });
     config.plugins.push(
         new MiniCssExtractPlugin({
-            filename: NO_MINIFY_CSS ? 'klaro.css' : 'klaro.min.css',
+            filename: NO_MINIFY_CSS ? 'curryKlaro.css' : 'curryKlaro.min.css',
         })
     );
 } else {
@@ -214,7 +214,7 @@ const klaroWithTranslationsConfig = {
     ...{
         output: {
             path: BUILD_DIR,
-            filename: SEPARATE_CSS ? 'klaro-no-css.js' : 'klaro.js',
+            filename: SEPARATE_CSS ? 'curryKlaro-no-css.js' : 'curryKlaro.js',
             library: 'klaro',
             libraryTarget: 'umd',
             publicPath: '',
@@ -231,8 +231,8 @@ const klaroWithoutTranslationsConfig = {
         output: {
             path: BUILD_DIR,
             filename: SEPARATE_CSS
-                ? 'klaro-no-translations-no-css.js'
-                : 'klaro-no-translations.js',
+                ? 'curryKlaro-no-translations-no-css.js'
+                : 'curryKlaro-no-translations.js',
             library: 'klaro',
             libraryTarget: 'umd',
             publicPath: '',

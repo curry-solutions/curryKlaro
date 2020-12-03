@@ -65,7 +65,7 @@
   ],
   "license": "BSD-3-Clause",
   "main": "dist/curryKlaro.js",
-  "name": "klaro",
+  "name": "curryKlaro",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/curry-solutions/curryKlaro.git"
