@@ -1,29 +1,42 @@
+acceptAll: Godtar alle
+acceptSelected: Godtar valgt
+service:
+    disableAll:
+        description: Bruk denne for å skru av/på alle apper.
+        title: Bytt alle apper
+    optOut:
+        description: Denne appen er lastet som standard (men du kan skru det av)
+        title: (opt-out)
+    purpose: Årsak
+    purposes: Årsaker
+    required:
+        description: Denne applikasjonen er alltid påkrevd
+        title: (alltid påkrevd)
+close: ''
+close_en: Close
 consentModal:
-    title: Informasjon vi samler inn
-    description: >
-        Her kan du se og velge hvilken informasjon vi samler inn om deg.
+    description: Her kan du se og velge hvilken informasjon vi samler inn om deg.
     privacyPolicy:
         name: personvernerklæring
-        text: >
-            For å lære mer, vennligst les vår {privacyPolicy}.
+        text: For å lære mer, vennligst les vår {privacyPolicy}.
+    title: Informasjon vi samler inn
 consentNotice:
-    changeDescription: Det har skjedd endringer siden ditt siste besøk, vennligst oppdater ditt samtykke.
-    description: >
-        Vi samler inn og prosesserer din personlige informasjon av følgende årsaker: {purposes}.
+    changeDescription:
+        Det har skjedd endringer siden ditt siste besøk, vennligst oppdater
+        ditt samtykke.
+    description:
+        'Vi samler inn og prosesserer din personlige informasjon av følgende
+        årsaker: {purposes}.'
+    imprint:
+        name: ''
+        name_en: imprint
     learnMore: Lær mer
-ok: OK
-save: Opslaan
+    privacyPolicy:
+        name: personvernerklæring
 decline: Avslå
-app:
-    disableAll:
-        title: Bytt alle apper
-        description: Bruk denne for å skru av/på alle apper.
-    optOut:
-        title: (opt-out)
-        description: Denne appen er lastet som standard (men du kan skru det av)
-    required:
-        title: (alltid påkrevd)
-        description: Denne applikasjonen er alltid påkrevd
-    purposes: Årsaker
-    purpose: Årsak
-poweredBy: Laget med curryKlaro!
+ok: OK
+poweredBy: Laget med Klaro!
+purposeItem:
+    service: ''
+    services: ''
+save: Opslaan
