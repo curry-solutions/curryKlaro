@@ -4,6 +4,7 @@ module.exports = {
         "browser": true,
         "es6": true
     },
+    "root": true,
     "extends": [
         "eslint:recommended",
         // "plugin:prettier/recommended",
@@ -26,11 +27,11 @@ module.exports = {
     ],
     "rules": {
         "eqeqeq": "error",
-        "indent": ["error", 4, {"SwitchCase": 1}],
+        "indent": ["error", 4, { "SwitchCase": 1 }],
         "linebreak-style": ["error", "unix"],
         "no-alert": "error",
         "no-confusing-arrow": "error",
-        "no-console": "error",
+        "no-console": ["error", {"allow": ["warn", "error"]}],
         "no-implied-eval": "error",
         "no-labels": "error",
         "no-lone-blocks": "error",
@@ -44,12 +45,17 @@ module.exports = {
         "yoda": "error",
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
-        "react/prop-types": "warn", // to become an error
+        "react/prop-types": 0, // to become an error
         "react/default-props-match-prop-types": "error",
         "react/forbid-foreign-prop-types": "error",
         "react/no-unused-prop-types": "error",
-        "react/sort-prop-types": ["error", {"callbacksLast": true}],
+        "react/sort-prop-types": ["error", { "callbacksLast": true }],
         "react/no-string-refs": "warn", // to become an error
         "eol-last": ["error", "always"]
+    },
+    "settings": {
+        "react": {
+            "version": "16.13.1" // we use Preact actually...
+        }
     }
 };

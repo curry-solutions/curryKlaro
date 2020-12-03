@@ -1,14 +1,17 @@
 const webpack = require('webpack');
 const path = require('path');
-var PACKAGE = require('./package.json');
-var APP_VERSION_PACKAGE = 'v' + PACKAGE.version;
 
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const SRC_DIR = path.resolve(__dirname, 'src');
 const APP_ENV = process.env.APP_ENV || 'dev';
+const ANALYZE_BUNDLE = process.env.ANALYZE_BUNDLE !== undefined;
 const SEPARATE_CSS = process.env.SEPARATE_CSS !== undefined;
 const NO_MINIFY_CSS = process.env.NO_MINIFY_CSS !== undefined;
 const APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV_MODE;
+const STYLE_FILES = /\.(sa|sc|c)ss$/;
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+    .BundleAnalyzerPlugin;
 
 function withEnvSourcemap(loader) {
     return APP_ENV === 'dev' ? loader + '?sourceMap' : loader;
@@ -20,7 +23,7 @@ let config = {
     context: SRC_DIR,
     resolve: {
         symlinks: false,
-        extensions: ['.js', '.jsx'],
+        extensions: ['.jsx', '.js'],
         modules: [SRC_DIR, 'node_modules'],
         alias: {
             react: 'preact/compat',
@@ -44,22 +47,32 @@ let config = {
             },
         ],
     },
-    entry: [SRC_DIR + '/klaro.js'],
+    entry: {
+        // here we only define the consent manager and the translations, the
+        // main Klaro files are defined below as they require special naming rules
+        cm: SRC_DIR + '/consent-manager.js',
+        translations: SRC_DIR + '/translations.js',
+        ide: SRC_DIR + '/ide.js',
+    },
     output: {
         path: BUILD_DIR,
-        filename: 'curryKlaro.js',
-        library: 'klaro',
+        filename: '[name].js',
+        library: '[name]',
         libraryTarget: 'umd',
         publicPath: '',
     },
     plugins: [],
 };
 
+if (ANALYZE_BUNDLE) {
+    config.plugins.push(new BundleAnalyzerPlugin());
+}
+
 if (SEPARATE_CSS) {
-    config.output.filename = 'curryKlaro-no-css.js';
     const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+    // no CSS does not apply to the consent manager and translations
     config.module.rules.push({
-        test: /\.(sa|sc|c)ss$/,
+        test: STYLE_FILES,
         use: [
             {
                 loader: MiniCssExtractPlugin.loader,
@@ -69,6 +82,10 @@ if (SEPARATE_CSS) {
                 },
             },
             withEnvSourcemap('css-loader'),
+            withEnvSourcemap({
+                loader: 'postcss-loader',
+                options: { config: { path: 'postcss.config.js' } },
+            }),
             withEnvSourcemap({
                 loader: 'sass-loader',
                 options: {
@@ -81,15 +98,25 @@ if (SEPARATE_CSS) {
     });
     config.plugins.push(
         new MiniCssExtractPlugin({
-            filename: NO_MINIFY_CSS ? 'curryKlaro.css' : 'curryKlaro.min.css',
+            filename: NO_MINIFY_CSS ? 'klaro.css' : 'klaro.min.css',
         })
     );
 } else {
     config.module.rules.push({
-        test: /\.scss|sass$/,
+        test: STYLE_FILES,
         use: [
             'style-loader',
             withEnvSourcemap('css-loader'),
+            {
+                loader: 'postcss-loader',
+                options: {
+                    sourceMap: true,
+                    config: {
+                        path: 'postcss.config.js',
+                    },
+                },
+            },
+            // withEnvSourcemap({loader: 'postcss-loader', options: {config: {path: 'postcss.config.js'}}}),
             withEnvSourcemap('sass-loader'),
         ],
     });
@@ -112,6 +139,7 @@ if (APP_DEV_MODE === 'server') {
     config = {
         ...config,
         devServer: {
+            open: true,
             // enable Hot Module Replacement on the server
             hot: true,
 
@@ -128,6 +156,15 @@ if (APP_DEV_MODE === 'server') {
                     target: 'http://localhost:5000/',
                     secure: false,
                 },
+            },
+
+            // we enable CORS requests (useful for testing)
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods':
+                    'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+                'Access-Control-Allow-Headers':
+                    'X-Requested-With, content-type, Authorization',
             },
 
             disableHostCheck: true,
@@ -157,7 +194,6 @@ if (APP_ENV === 'production') {
                 'process.env.NODE_ENV': '"production"',
                 VERSION: JSON.stringify(
                     process.env.CI_APP_VERSION ||
-                        APP_VERSION_PACKAGE ||
                         process.env.APP_VERSION ||
                         process.env.APP_COMMIT ||
                         'unknown'
@@ -169,4 +205,46 @@ if (APP_ENV === 'production') {
     };
 }
 
-module.exports = config;
+// we create separate configs for Klaro with and without translations as
+// Webpack isn't able to generate two modules with different filenames but
+// the same module name...
+
+const klaroWithTranslationsConfig = {
+    ...config,
+    ...{
+        output: {
+            path: BUILD_DIR,
+            filename: SEPARATE_CSS ? 'klaro-no-css.js' : 'klaro.js',
+            library: 'klaro',
+            libraryTarget: 'umd',
+            publicPath: '',
+        },
+        entry: {
+            klaro: SRC_DIR + '/klaro.js',
+        },
+    },
+};
+
+const klaroWithoutTranslationsConfig = {
+    ...config,
+    ...{
+        output: {
+            path: BUILD_DIR,
+            filename: SEPARATE_CSS
+                ? 'klaro-no-translations-no-css.js'
+                : 'klaro-no-translations.js',
+            library: 'klaro',
+            libraryTarget: 'umd',
+            publicPath: '',
+        },
+        entry: {
+            klaro: SRC_DIR + '/klaro-no-translations.js',
+        },
+    },
+};
+
+module.exports = [
+    config,
+    klaroWithoutTranslationsConfig,
+    klaroWithTranslationsConfig,
+];

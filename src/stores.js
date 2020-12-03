@@ -1,8 +1,27 @@
-import {getCookie, setCookie, deleteCookie} from 'utils/cookies'
+import {getCookie, setCookie, deleteCookie} from './utils/cookies'
+
+
+export class TestStore {
+    constructor(){
+        this.value = null
+    }
+
+    get() {
+        return this.value
+    }
+
+    set(value) {
+        this.value = value;
+    }
+
+    delete() {
+        this.value = null
+    }
+}
 
 export class CookieStore {
     constructor(manager) {
-        this.cookieName = manager.cookieName
+        this.cookieName = manager.storageName
         this.cookieDomain = manager.cookieDomain
         this.cookieExpiresAfterDays = manager.cookieExpiresAfterDays
     }
@@ -23,27 +42,54 @@ export class CookieStore {
     }
 }
 
-export class LocalStorageStore {
-    constructor(manager) {
-        this.key = manager.cookieName;
+class StorageStore {
+    constructor(manager, handle) {
+        this.key = manager.storageName;
+        this.handle = handle
     }
 
     get() {
-        return localStorage.getItem(this.key);
+        return this.handle.getItem(this.key);
+    }
+
+    getWithKey(key) {
+        return this.handle.getItem(key);
     }
 
     set(value) {
-        return localStorage.setItem(this.key, value)
+        return this.handle.setItem(this.key, value)
+    }
+
+    setWithKey(key, value) {
+        return this.handle.setItem(key, value)
     }
 
     delete() {
-        return localStorage.removeItem(this.key);
+        return this.handle.removeItem(this.key);
+    }
+
+    deleteWithKey(key) {
+        return this.handle.removeItem(key);
+    }
+}
+
+export class LocalStorageStore extends StorageStore {
+    constructor(manager){
+        super(manager, localStorage)
+    }
+}
+
+export class SessionStorageStore extends StorageStore {
+    constructor(manager){
+        super(manager, sessionStorage)
     }
 }
 
 const stores = {
     'cookie': CookieStore,
-    'localStorage': LocalStorageStore
+    'test': TestStore,
+    'localStorage': LocalStorageStore,
+    'sessionStorage': SessionStorageStore,
 }
 
 export default stores
