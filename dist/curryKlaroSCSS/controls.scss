@@ -152,7 +152,7 @@
                 border-radius: $cm-border-radius;
             }
 
-            a.cm-btn {
+            a.btn {
                 padding: 8px;
                 border-radius: $cm-border-radius;
                 flex-grow: 0;
@@ -209,7 +209,6 @@ p.cm-description {
         &[disabled] {
             background-color: $cm-gray-light;
         }
-
     }
 }
 

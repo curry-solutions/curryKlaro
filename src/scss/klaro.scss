@@ -55,7 +55,7 @@
             vertical-align: middle;
         }
 
-        .cm-btn {
+        .btn {
             @include var(color, 'font-color-dark');
 
             background: #555;
@@ -363,7 +363,7 @@
                     width: 100%;
                 }
 
-                button.cm-btn {
+                button.btn {
                     margin-top: 0.5em;
 
                     @media (max-width: $cm-mobile) {
