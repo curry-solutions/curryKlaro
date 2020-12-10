@@ -28,17 +28,35 @@ export default class ConsentModal extends React.Component {
             config.groupByPurpose !== undefined ? config.groupByPurpose : true;
 
         let closeLink;
+
         if (!config.mustConsent) {
-            closeLink = (
-                <button
-                    title={t(['close'])}
-                    className="hide"
-                    type="button"
-                    onClick={hide}
-                >
-                    <Close t={t} />
-                </button>
-            );
+            let closeHTML;
+            closeHTML = t(['!', 'closeButtonHTML'], { lang: lang });
+            console.log('closeHTML', closeHTML);
+            if (closeHTML && closeHTML !== undefined) {
+                closeLink = (
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: closeHTML,
+                        }}
+                        title={t(['close'])}
+                        className="hide-custom"
+                        type="button"
+                        onClick={hide}
+                    ></div>
+                );
+            } else {
+                closeLink = (
+                    <button
+                        title={t(['close'])}
+                        className="hide"
+                        type="button"
+                        onClick={hide}
+                    >
+                        <Close t={t} />
+                    </button>
+                );
+            }
         }
 
         let declineButton;
@@ -90,9 +108,8 @@ export default class ConsentModal extends React.Component {
             }
         } else {
             // this is the modern way
-            ppUrl = t(['!', 'privacyPolicyUrl'], {lang: lang})
-            if (ppUrl !== undefined)
-                ppUrl = ppUrl.join('')
+            ppUrl = t(['!', 'privacyPolicyUrl'], { lang: lang });
+            if (ppUrl !== undefined) ppUrl = ppUrl.join('');
         }
 
         let ppLink;
@@ -109,7 +126,10 @@ export default class ConsentModal extends React.Component {
             servicesOrPurposes = (
                 <Purposes t={t} config={config} manager={manager} lang={lang} />
             );
-        else servicesOrPurposes = <Services t={t} config={config} manager={manager} lang={lang} />;
+        else
+            servicesOrPurposes = (
+                <Services t={t} config={config} manager={manager} lang={lang} />
+            );
 
         const innerModal = (
             <div className="cm-modal cm-klaro">
@@ -127,13 +147,9 @@ export default class ConsentModal extends React.Component {
                             text={[t(['consentModal', 'description'])].concat(
                                 (ppLink &&
                                     [' '].concat(
-                                        t(
-                                            [
-                                                'privacyPolicy',
-                                                'text',
-                                            ],
-                                            { privacyPolicy: ppLink }
-                                        )
+                                        t(['privacyPolicy', 'text'], {
+                                            privacyPolicy: ppLink,
+                                        })
                                     )) ||
                                     []
                             )}
@@ -147,8 +163,7 @@ export default class ConsentModal extends React.Component {
                         {acceptButton}
                         {acceptAllButton}
                     </div>
-                    {
-                        !config.disablePoweredBy &&
+                    {!config.disablePoweredBy && (
                         <p className="cm-powered-by">
                             <a
                                 target="_blank"
@@ -161,7 +176,7 @@ export default class ConsentModal extends React.Component {
                                 {t(['poweredBy'])}
                             </a>
                         </p>
-                    }
+                    )}
                 </div>
             </div>
         );

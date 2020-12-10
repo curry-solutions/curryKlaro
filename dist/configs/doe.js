@@ -64,6 +64,8 @@ var klaroConfig = {
         // bundled translations.
         de: {
             privacyPolicyUrl: '/#privacy',
+            closeButtonHTML:
+                '<button class="btn btn-outline-light icon-only"><i class="icon icon-cross2"></i></button>',
             // Put a link to your privacy policy here (relative or absolute).
             consentModal: {
                 title: 'Titel',

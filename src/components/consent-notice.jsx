@@ -81,6 +81,7 @@ export default class ConsentNotice extends React.Component {
         else
             purposesText = [...purposesTranslations.slice(0, -2), purposesTranslations.slice(-2).join(' & ')].join(', ');
         let ppUrl;
+        
         // to do: deprecate and remove this 
         if (config.privacyPolicy !== undefined) {
             if (typeof config.privacyPolicy === 'string')

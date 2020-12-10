@@ -167,10 +167,19 @@
                 top: 20px;
                 right: 20px;
                 z-index: 1;
+                cursor: pointer;
 
                 svg {
                     stroke: $cm-font-color-dark;
                 }
+            }
+
+            .hide-custom {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                z-index: 1;
+                cursor: pointer;
             }
 
             .cm-footer {
