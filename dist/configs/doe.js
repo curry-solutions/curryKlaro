@@ -44,7 +44,7 @@ var klaroConfig = {
 
     noFloating: false,
     noNotice: false,
-    noToggleAll: false,
+    hideToggleAll: true,
 
     // You can define the UI language directly here. If undefined, Klaro will
     // use the value given in the global "lang" variable. If that does
