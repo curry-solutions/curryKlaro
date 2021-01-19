@@ -97,7 +97,7 @@ export default class ConsentModal extends React.Component {
 
         let ppUrl;
         // to do: deprecate and remove this (also, this is duplicated from the notice)
-        console.log(config.privacyPolicy);
+
         if (config.privacyPolicy !== undefined) {
             if (typeof config.privacyPolicy === 'string')
                 ppUrl = config.privacyPolicy;
