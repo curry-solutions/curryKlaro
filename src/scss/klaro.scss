@@ -240,6 +240,12 @@
                     li.cm-purpose {
                         .cm-services {
                             .cm-caret {
+                                &:focus {
+                                    outline: none;
+                                }
+                                :-moz-focus-inner {
+                                    border: 0;
+                                }
                                 color: #888;
                             }
 
@@ -415,4 +421,8 @@
     .cookie-notice-hidden {
         display: none !important;
     }
+}
+
+body.modal-open {
+    overflow: hidden;
 }

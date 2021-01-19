@@ -183,6 +183,8 @@ export default class ConsentModal extends React.Component {
         if (embedded)
             return <div className="cookie-modal cm-embedded">{innerModal}</div>;
 
+        document.body.classList.add('modal-open');
+
         return (
             <div className="cookie-modal">
                 <div className="cm-bg" onClick={hide} />
