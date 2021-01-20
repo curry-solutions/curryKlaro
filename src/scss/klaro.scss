@@ -183,7 +183,17 @@
             }
 
             .cm-footer {
-                padding: 1em;
+                padding: 1em map-get($cm-whitespace, lg)
+                    map-get($cm-whitespace, lg) + 20px;
+                @media (max-width: $cm-tablet) {
+                    padding: 1em map-get($cm-whitespace, md)
+                        map-get($cm-whitespace, md) + 20px;
+                }
+                @media (max-width: $cm-mobile) {
+                    padding: 1em map-get($cm-whitespace, sm)
+                        map-get($cm-whitespace, sm) + 20px;
+                }
+
                 border-top: $cm-border-dark;
 
                 &-buttons {
@@ -198,6 +208,10 @@
                     text-align: right;
                     padding-right: 8px;
 
+                    @media (max-width: $cm-tablet) {
+                        bottom: 1rem;
+                    }
+
                     a {
                         color: $cm-font-color-dark-deemphasized;
                     }
@@ -205,9 +219,23 @@
             }
 
             .cm-header {
-                padding: 1em;
-                padding-right: 24px;
+                padding: map-get($cm-whitespace, lg) map-get($cm-whitespace, lg) +
+                    10px 1em map-get($cm-whitespace, lg);
                 border-bottom: $cm-border-dark;
+
+                @media (max-width: $cm-tablet) {
+                    padding: map-get($cm-whitespace, md)
+                        map-get($cm-whitespace, md) + 10px 1em
+                        map-get($cm-whitespace, md);
+                    border-bottom: $cm-border-dark;
+                }
+
+                @media (max-width: $cm-mobile) {
+                    padding: map-get($cm-whitespace, sm)
+                        map-get($cm-whitespace, sm) + 10px 1em
+                        map-get($cm-whitespace, sm);
+                    border-bottom: $cm-border-dark;
+                }
 
                 h1 {
                     margin: 0;
@@ -216,12 +244,19 @@
 
                     &.title {
                         padding-right: 20px;
+                        word-wrap: break-word;
                     }
                 }
             }
 
             .cm-body {
-                padding: 1em;
+                padding: 1em map-get($cm-whitespace, lg);
+                @media (max-width: $cm-tablet) {
+                    padding: 1em map-get($cm-whitespace, md);
+                }
+                @media (max-width: $cm-mobile) {
+                    padding: 1em map-get($cm-whitespace, sm);
+                }
 
                 ul {
                     display: block;
@@ -240,13 +275,16 @@
                     li.cm-purpose {
                         .cm-services {
                             .cm-caret {
-                                &:focus {
-                                    outline: none;
-                                }
-                                :-moz-focus-inner {
-                                    border: 0;
-                                }
                                 color: #888;
+
+                                a {
+                                    &:focus {
+                                        outline: none;
+                                    }
+                                    :-moz-focus-inner {
+                                        border: 0;
+                                    }
+                                }
                             }
 
                             .cm-content {
