@@ -199,7 +199,15 @@
                 &-buttons {
                     display: flex;
                     flex-flow: row;
-                    justify-content: space-between;
+                    justify-content: flex-end;
+
+                    @media (max-width: $cm-tablet) {
+                        justify-content: space-between;
+                        flex-flow: column;
+                        .cm-btn {
+                            margin-bottom: 1rem;
+                        }
+                    }
                 }
 
                 .cm-powered-by {
