@@ -299,13 +299,13 @@
                                 transition: max-height 0.5s
                                     cubic-bezier(0, 1, 0, 1);
 
+                                .cm-switch {
+                                    transform: scale(0.8);
+                                }
+
                                 &.expanded {
                                     max-height: 1000px;
                                     transition: max-height 1s ease-in-out;
-
-                                    .cm-switch {
-                                        transform: scale(0.8);
-                                    }
                                 }
                             }
                         }
@@ -334,7 +334,7 @@
 
                         &.cm-toggle-all {
                             border-top: $cm-border-dark;
-                            padding-top: 1em;
+                            margin-top: 3em;
                         }
 
                         span.cm-list-title {
