@@ -1,30 +1,32 @@
-$primary: #00439a;
-$primary-transparent: rgba(24, 60, 107, 0.6);
-$primary-semitransparent: rgba(24, 60, 107, 0.8);
+@import 'modal';
+@import 'vars';
 
-$box-shadow: 0px 5px 15px #00000029;
-$border-radius: 2px;
-$border: 1px solid #555;
+%btn-blue {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.4375rem 0.875rem;
+    //font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 2px;
 
-$font-color: #525556;
-$font-color-transparent: rgba(79, 69, 69, 0.55);
-$font-color-semitransparent: rgba(79, 69, 69, 0.7);
-
-$font-color-deemphasized: #999;
-$font-color-link: #00439a;
-
-$bg: white;
-$bg-transparent: rgba(0, 0, 0, 0.5);
-
-$button-background: $primary;
-$button-background-hover: #4f4f4f;
-$button-background-active: $font-color-semitransparent;
-$button-primary-background: $primary;
-$button-primary-background-hover: $primary-transparent;
-$button-primary-background-active: $primary-semitransparent;
-
-$t-style: ease-in-out;
-$t-speed: 0.25s;
+    background-color: $primary;
+    border-color: $primary;
+    &:hover {
+        background-color: $primary-lighter;
+        border-color: $primary-lighter;
+    }
+    &.disabled,
+    &:disabled {
+        opacity: 1; // Standard Opacity sieht bei der Map blöd aus
+        background-color: mix(lightgrey, $primary, 50%);
+        cursor: default;
+    }
+}
 
 .klaro {
     @import 'floating-button';
@@ -53,14 +55,10 @@ $t-speed: 0.25s;
             text-decoration: none;
         }
 
-        h1,
-        h2 {
-            color: $primary;
-            font-size: 28px;
-        }
-
         p,
         strong,
+        h1,
+        h2,
         ul,
         li {
             font-family: inherit;
@@ -393,29 +391,15 @@ $t-speed: 0.25s;
 
                         span.cm-list-title {
                             font-weight: 600;
-<<<<<<< HEAD
-<<<<<<< HEAD
                             display: inline;
-=======
-=======
-                            font-size: 1rem;
->>>>>>> ccd1a78... Styling
-                            color: $primary;
->>>>>>> dc192d6... Designanpassungen
                         }
 
                         span.cm-opt-out,
                         span.cm-required {
-<<<<<<< HEAD
                             padding-left: 0.6em;
                             font-size: 0.8em;
                             color: $cm-font-color-dark-deemphasized;
                             display: inline;
-=======
-                            padding-left: 0.2em;
-                            font-size: 0.8rem;
-                            color: $font-color-deemphasized;
->>>>>>> ccd1a78... Styling
                         }
                     }
                 }
@@ -470,20 +454,8 @@ $t-speed: 0.25s;
             margin-bottom: 0;
             margin-right: 0;
             bottom: 0;
-<<<<<<< HEAD
 
-<<<<<<< HEAD
             padding: 1em;
-=======
-            @media (min-width: 1024px) {
-                padding: $klaroGutter;
-            }
-=======
-            
->>>>>>> 728925e... Fixes
-            padding: 1em;
-
->>>>>>> cf55ff5... Fixes for small devices
             padding-top: 0;
 
             p {
