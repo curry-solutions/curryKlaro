@@ -84,5 +84,6 @@
     "make-css": "cross-env SEPARATE_CSS=true cross-env APP_ENV=production cross-env webpack --config webpack.config.js",
     "make-dev": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=server webpack-dev-server --config webpack.config.js --history-api-fallback",
     "make-watch": "cross-env APP_ENV=dev cross-env APP_DEV_MODE=watch webpack --watch --config webpack.config.js"
-  }
+  },
+  "dependencies": {}
 }
