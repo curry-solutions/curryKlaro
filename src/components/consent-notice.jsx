@@ -213,7 +213,7 @@ export default class ConsentNotice extends React.Component {
             );
 
         const notice = (
-            <div
+            <div role="dialog" aria-describedby="id-cookie-notice" aria-labelledby="id-cookie-title"
                 className={`cookie-notice ${
                     !noticeIsVisible && !testing ? 'cookie-notice-hidden' : ''
                 } ${noticeAsModal ? 'cookie-modal-notice' : ''} ${
@@ -221,7 +221,8 @@ export default class ConsentNotice extends React.Component {
                 }`}
             >
                 <div className="cn-body">
-                    <p>
+                    <h2 id="id-cookie-title">Cookie Einstellungen</h2>
+                    <p id="id-cookie-notice">
                         <Text
                             config={config}
                             text={t(['consentNotice', 'description'], {

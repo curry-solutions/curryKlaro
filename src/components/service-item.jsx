@@ -26,6 +26,7 @@ export default class ServiceItem extends React.Component {
             onToggle(e.target.checked);
         };
         const id = `service-item-${name}`;
+        const titleid=`${id}-title`;
         const purposesText = purposes
             .map((purpose) => t(['!', 'purposes', purpose, 'title?']) || asTitle(purpose))
             .join(', ');
@@ -72,6 +73,7 @@ export default class ServiceItem extends React.Component {
                             ? ' half-checked only-required'
                             : '')
                     }
+                    aria-labelledby={`${titleid}`}
                     aria-describedby={`${id}-description`}
                     disabled={required}
                     checked={checked || required}
@@ -83,7 +85,7 @@ export default class ServiceItem extends React.Component {
                     className="cm-list-label"
                     {...(required ? { tabIndex: '0' } : {})}
                 >
-                    <span className="cm-list-title">
+                    <span className="cm-list-title" id={`${titleid}`}>
                         {title || tt(translations, lang, 'zz', ['!', 'title']) || t(['!', name, 'title?']) || asTitle(name)}
                     </span>
                     {requiredText}

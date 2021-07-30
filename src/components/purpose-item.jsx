@@ -34,6 +34,7 @@ export default class PurposeItem extends React.Component {
             onToggle(e.target.checked);
         };
         const id = `purpose-item-${name}`;
+        const titleid=`${id}-title`;
         const purposesText = purposes
             .map((purpose) => t(['!', 'purposes', purpose, 'title?']) || asTitle(purpose))
             .join(', ');
@@ -62,6 +63,9 @@ export default class PurposeItem extends React.Component {
 
         const toggleServicesVisible = (e) => {
             e.preventDefault();
+            const getCurrentExpandedStatus=e.currentTarget.getAttribute("aria-expanded")==="false"?false:true;
+            e.currentTarget.setAttribute("aria-expanded", !getCurrentExpandedStatus);
+
             this.setState({ servicesVisible: !servicesVisible });
         };
 
@@ -92,6 +96,7 @@ export default class PurposeItem extends React.Component {
                                 : ' half-checked'
                             : '')
                     }
+                    aria-labelledby={`${titleid}`}
                     aria-describedby={`${id}-description`}
                     disabled={required}
                     checked={
@@ -105,7 +110,7 @@ export default class PurposeItem extends React.Component {
                     className="cm-list-label"
                     {...(required ? { tabIndex: '0' } : {})}
                 >
-                    <span className="cm-list-title">
+                    <span className="cm-list-title" id={`${titleid}`}>
                         {title || t(['!', 'purposes', name, 'title?']) || asTitle(name)}
                     </span>
                     {requiredText}
@@ -128,9 +133,15 @@ export default class PurposeItem extends React.Component {
                 {services.length > 0 && (
                     <div className="cm-services">
                         <div className="cm-caret">
-                            <a href="#" onClick={toggleServicesVisible}>
-                                {(servicesVisible && <span>&#8593;</span>) || (
-                                    <span>&#8595;</span>
+                        <a aria-haspopup="true" href="#" aria-expanded="false" onClick={toggleServicesVisible}>
+                                {(servicesVisible && <span>
+                                    &#8593;
+                                        <span className="cm-sr-only">{!config.translations[lang].ListStatus.closed?'Close List':config.translations[lang].ListStatus.closed}</span>
+                                    </span>) || (
+                                    <span>
+                                    &#8595;
+                                        <span className="cm-sr-only">{!config.translations[lang].ListStatus.open?'Close List':config.translations[lang].ListStatus.open}</span>
+                                    </span>
                                 )}{' '}
                                 {services.length}{' '}
                                 {t([

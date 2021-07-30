@@ -7,8 +7,16 @@ import Text from './text';
 export default class ConsentModal extends React.Component {
     constructor(props) {
         super(props);
+        this.button = React.createRef();
+        this.focusButton = this.focusButton.bind(this);
         const { manager } = props;
         manager.restoreSavedConsents();
+    }
+    componentDidMount() {
+        this.focusButton();
+    }
+    focusButton() {
+        this.button.current.focus();
     }
 
     render() {
@@ -42,6 +50,7 @@ export default class ConsentModal extends React.Component {
                         className="hide-custom"
                         type="button"
                         onClick={hide}
+                        ref={this.button}
                     ></div>
                 );
             } else {
@@ -51,6 +60,7 @@ export default class ConsentModal extends React.Component {
                         className="hide"
                         type="button"
                         onClick={hide}
+                        ref={this.button}
                     >
                         <Close t={t} />
                     </button>
@@ -131,16 +141,16 @@ export default class ConsentModal extends React.Component {
             );
 
         const innerModal = (
-            <div className="cm-modal cm-klaro">
+            <div className="cm-modal cm-klaro" role="dialog" aria-labelledby="cookie-modal-header" aria-describedby="cookie-modal-description">
                 <div className="cm-header">
                     {closeLink}
-                    <h1 className="title">
+                    <h2 className="title"  id="cookie-modal-header">
                         <Text
                             config={config}
                             text={t(['consentModal', 'title'])}
                         />
-                    </h1>
-                    <p>
+                    </h2>
+                    <p id="cookie-modal-description">
                         <Text
                             config={config}
                             text={[t(['consentModal', 'description'])].concat(

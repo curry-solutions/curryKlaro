@@ -38,6 +38,8 @@ $cm-red4: scale-color($cm-red3, $lightness: 20%) !default;
 
 $cm-yellow1: #f2d600 !default;
 
+$hover-c: #a3a3a3;
+
 $vars: (
     green1: $cm-blue1,
     green2: $cm-blue1,
@@ -45,7 +47,7 @@ $vars: (
     font-color-dark: $cm-font-color-dark,
     blue1: $cm-blue1,
     blue2: $cm-blue1,
-    blue3: $cm-blue1,
+    blue3: $cm-blue1
 );
 
 /* Spacing */
@@ -55,13 +57,13 @@ $cm-space: (
     md: 12px,
     lg: 24px,
     xl: 48px,
-    xxl: 96px,
+    xxl: 96px
 ) !default;
 
 $cm-whitespace: (
     sm: 30px,
     md: 60px,
-    lg: 80px,
+    lg: 80px
 ) !default;
 
 $cookie-notice-right: 125px;
