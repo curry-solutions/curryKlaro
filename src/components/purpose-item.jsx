@@ -165,14 +165,18 @@ export default class PurposeItem extends React.Component {
                                 onKeyDown={handleSpace}
                             >
                                 {(servicesVisible && (
-                                    <span>
+                                    <span
+                                        aria-label={t(['listStatus', 'closed'])}
+                                    >
                                         &#8593;
                                         <span className="cm-sr-only">
                                             {t(['listStatus', 'closed'])}
                                         </span>
                                     </span>
                                 )) || (
-                                    <span>
+                                    <span
+                                        aria-label={t(['listStatus', 'open'])}
+                                    >
                                         &#8595;
                                         <span className="cm-sr-only">
                                             {t(['listStatus', 'open'])}

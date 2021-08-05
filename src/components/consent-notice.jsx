@@ -13,6 +13,10 @@ export default class ConsentNotice extends React.Component {
         };
     }
 
+    componentDidMount() {
+        this.noticeRef.focus();
+    }
+
     componentDidUpdate(prevProps) {
         if (prevProps.modal !== this.props.modal)
             this.setState({ modal: this.props.modal });
@@ -213,12 +217,18 @@ export default class ConsentNotice extends React.Component {
             );
 
         const notice = (
-            <div role="dialog" aria-describedby="id-cookie-notice" aria-labelledby="id-cookie-title"
+            <div
+                role="dialog"
+                aria-describedby="id-cookie-notice"
+                aria-labelledby="id-cookie-title"
                 className={`cookie-notice ${
                     !noticeIsVisible && !testing ? 'cookie-notice-hidden' : ''
                 } ${noticeAsModal ? 'cookie-modal-notice' : ''} ${
                     embedded ? 'cn-embedded' : ''
                 }`}
+                ref={(div) => {
+                    this.noticeRef = div;
+                }}
             >
                 <div className="cn-body">
                     <h2 id="id-cookie-title">Cookie Einstellungen</h2>

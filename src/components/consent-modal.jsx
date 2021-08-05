@@ -11,6 +11,10 @@ export default class ConsentModal extends React.Component {
         manager.restoreSavedConsents();
     }
 
+    componentDidMount() {
+        this.consentModalRef.focus();
+    }
+
     render() {
         const {
             hide,
@@ -39,20 +43,28 @@ export default class ConsentModal extends React.Component {
                             __html: closeHTML,
                         }}
                         title={t(['close'])}
+                        aria-label={t(['close'])}
                         className="hide-custom"
                         type="button"
                         onClick={hide}
                         tabIndex="0"
+                        ref={(div) => {
+                            this.consentModalRef = div;
+                        }}
                     ></div>
                 );
             } else {
                 closeLink = (
                     <button
                         title={t(['close'])}
+                        aria-label={t(['close'])}
                         className="hide"
                         type="button"
                         onClick={hide}
                         tabIndex="0"
+                        ref={(div) => {
+                            this.consentModalRef = div;
+                        }}
                     >
                         <Close t={t} />
                     </button>
