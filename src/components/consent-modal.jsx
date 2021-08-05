@@ -35,7 +35,9 @@ export default class ConsentModal extends React.Component {
 
         if (!config.mustConsent) {
             let closeHTML;
-            const close = t(['close']);
+            const close = t(['!', 'config', 'close'])
+                ? t(['config', 'close'])
+                : t(['close']);
             closeHTML = t(['!', 'closeButtonHTML'], { lang: lang });
             if (closeHTML && closeHTML !== undefined) {
                 closeLink = (
