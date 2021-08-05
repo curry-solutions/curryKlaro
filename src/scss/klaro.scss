@@ -205,12 +205,15 @@
             }
 
             .cm-footer {
-                padding: 1em map-get($cm-whitespace, lg) map-get($cm-whitespace, lg) + 10px;
+                padding: 1em map-get($cm-whitespace, lg)
+                    map-get($cm-whitespace, lg) + 10px;
                 @media (max-width: $cm-tablet) {
-                    padding: 1em map-get($cm-whitespace, md) map-get($cm-whitespace, md) + 10px;
+                    padding: 1em map-get($cm-whitespace, md)
+                        map-get($cm-whitespace, md) + 10px;
                 }
                 @media (max-width: $cm-mobile) {
-                    padding: 1em map-get($cm-whitespace, sm) map-get($cm-whitespace, sm) + 10px;
+                    padding: 1em map-get($cm-whitespace, sm)
+                        map-get($cm-whitespace, sm) + 10px;
                 }
 
                 border-top: $cm-border-dark;
@@ -252,16 +255,21 @@
             }
 
             .cm-header {
-                padding: map-get($cm-whitespace, lg) map-get($cm-whitespace, lg) + 10px 1em map-get($cm-whitespace, lg);
+                padding: map-get($cm-whitespace, lg) map-get($cm-whitespace, lg) +
+                    10px 1em map-get($cm-whitespace, lg);
                 border-bottom: $cm-border-dark;
 
                 @media (max-width: $cm-tablet) {
-                    padding: map-get($cm-whitespace, md) map-get($cm-whitespace, md) + 10px 1em map-get($cm-whitespace, md);
+                    padding: map-get($cm-whitespace, md)
+                        map-get($cm-whitespace, md) + 10px 1em
+                        map-get($cm-whitespace, md);
                     border-bottom: $cm-border-dark;
                 }
 
                 @media (max-width: $cm-mobile) {
-                    padding: map-get($cm-whitespace, sm) map-get($cm-whitespace, sm) + 10px 1em map-get($cm-whitespace, sm);
+                    padding: map-get($cm-whitespace, sm)
+                        map-get($cm-whitespace, sm) + 10px 1em
+                        map-get($cm-whitespace, sm);
                     border-bottom: $cm-border-dark;
                 }
 
@@ -316,9 +324,9 @@
                                 color: #888;
 
                                 a {
-                                    &:focus {
-                                        outline: none;
-                                    }
+                                    // &:focus {
+                                    //     outline: none;
+                                    // }
                                     :-moz-focus-inner {
                                         border: 0;
                                     }
@@ -333,7 +341,9 @@
                                 max-height: 0;
                                 margin-top: 15px;
                                 margin-bottom: 15px;
-                                transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), margin-bottom 0.5s cubic-bezier(0, 1, 0, 1);
+                                transition: max-height 0.5s
+                                        cubic-bezier(0, 1, 0, 1),
+                                    margin-bottom 0.5s cubic-bezier(0, 1, 0, 1);
 
                                 .cm-switch {
                                     transform: scale(0.8);
@@ -341,7 +351,8 @@
 
                                 &.expanded {
                                     max-height: 1000px;
-                                    transition: max-height 0.5s ease-in-out, margin-bottom 0.5s ease-in-out;
+                                    transition: max-height 0.5s ease-in-out,
+                                        margin-bottom 0.5s ease-in-out;
                                     margin-bottom: 40px;
                                 }
                                 .cm-service {

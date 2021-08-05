@@ -50,7 +50,7 @@ export default class ConsentModal extends React.Component {
                         className="hide-custom"
                         type="button"
                         onClick={hide}
-                        ref={this.button}
+                        tabIndex="0"
                     ></div>
                 );
             } else {
@@ -61,6 +61,7 @@ export default class ConsentModal extends React.Component {
                         type="button"
                         onClick={hide}
                         ref={this.button}
+                        tabIndex="0"
                     >
                         <Close t={t} />
                     </button>
@@ -77,6 +78,7 @@ export default class ConsentModal extends React.Component {
                     className="cm-btn btn btn-secondary cm-btn-decline cm-btn-danger cn-decline"
                     type="button"
                     onClick={declineAndHide}
+                    tabIndex="0"
                 >
                     {t(['decline'])}
                 </button>
@@ -141,10 +143,15 @@ export default class ConsentModal extends React.Component {
             );
 
         const innerModal = (
-            <div className="cm-modal cm-klaro" role="dialog" aria-labelledby="cookie-modal-header" aria-describedby="cookie-modal-description">
+            <div
+                className="cm-modal cm-klaro"
+                role="dialog"
+                aria-labelledby="cookie-modal-header"
+                aria-describedby="cookie-modal-description"
+            >
                 <div className="cm-header">
                     {closeLink}
-                    <h2 className="title"  id="cookie-modal-header">
+                    <h2 className="title" id="cookie-modal-header">
                         <Text
                             config={config}
                             text={t(['consentModal', 'title'])}
