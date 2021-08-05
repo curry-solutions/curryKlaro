@@ -14,17 +14,18 @@ var klaroConfig = {
     translations: {
         de: {
             privacyPolicyUrl: '/datenschutz',
-            ListStatus: {
+            listStatus: {
                 open: 'Liste öffnen',
-                closed: 'Liste schließen'
+                closed: 'Liste schließen',
             },
             consentModal: {
                 title: 'Wir verwenden folgende Drittanbieteranwendungen',
-                description: 'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln.',
+                description:
+                    'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln.',
                 privacyPolicy: {
                     text: 'Mehr Informationen können Sie auf unserer {privacyPolicy} entnehmen.',
-                    name: 'Datenschutzseite'
-                }
+                    name: 'Datenschutzseite',
+                },
             },
             purposes: {
                 analytics: 'Besucher-Statistiken',
@@ -32,13 +33,14 @@ var klaroConfig = {
                 accessibility: 'Nutzerzugänglichkeit',
                 content: 'Inhalte',
                 socialmedia: 'soziale Medien',
-                interaction: 'Interaktion'
+                interaction: 'Interaktion',
             },
             consentNotice: {
-                changeDescription: 'Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.',
+                changeDescription:
+                    'Es gab Änderungen seit Ihrem letzten Besuch, bitte aktualisieren Sie Ihre Auswahl.',
                 description:
                     'Über die zum Besuch unserer Seite technisch erforderlichen Cookies hinaus können auch solche zum Einsatz gelangen, welche der Besucherstatistik dienen sowie Funktionen von Drittanbietern. Bitte treffen Sie Ihre individuelle Entscheidung, welche Arten von Cookies Sie bei der Nutzung unserer Webseite zulassen möchten. Ihre Einwilligung können Sie jederzeit in den Cookie-Einstellungen widerrufen. Weitere Informationen finden Sie auf unserer {privacyPolicy}.',
-                learnMore: 'Einstellungen'
+                learnMore: 'Einstellungen',
             },
             ok: 'OK',
             save: 'Speichern',
@@ -47,33 +49,36 @@ var klaroConfig = {
             acceptAll: 'Allen zustimmen',
             floatingButtonTitle: 'Cookie-Einstellungen',
             podigee: {
-                description: 'Podigee stellt Audioinhalte zur Verfügung.'
+                description: 'Podigee stellt Audioinhalte zur Verfügung.',
             },
             googlerecaptcha: {
-                description: 'ReCaptcha stellt Sicherheitsfunktionen zur Verfügung.'
+                description:
+                    'ReCaptcha stellt Sicherheitsfunktionen zur Verfügung.',
             },
             youtube: {
-                description: 'Stellt Videoinhalte per iFrame zur Verfügung'
+                description: 'Stellt Videoinhalte per iFrame zur Verfügung',
             },
             matomo: {
-                description: 'Sammeln von Besucherstatistiken'
+                description: 'Sammeln von Besucherstatistiken',
             },
             Vimeo: {
-                description: 'Stellt Videoinhalte per iFrame bereit.'
+                description: 'Stellt Videoinhalte per iFrame bereit.',
             },
             googlemaps: {
-                description: 'Google Maps stellt Kartenmaterial zur Verfügung.'
+                description: 'Google Maps stellt Kartenmaterial zur Verfügung.',
             },
             facebook: {
-                description: 'Facebook ermöglicht das Teilen und Liken von Beiträgen.'
+                description:
+                    'Facebook ermöglicht das Teilen und Liken von Beiträgen.',
             },
             userlike: {
-                description: 'Stellt einen Chat mit den Ansprechpartnern von Bayern Innovativ bereit.'
+                description:
+                    'Stellt einen Chat mit den Ansprechpartnern von Bayern Innovativ bereit.',
             },
             soundcloud: {
-                description: 'SoundCloud stellt Audioinhalte zur Verfügung.'
-            }
-        }
+                description: 'SoundCloud stellt Audioinhalte zur Verfügung.',
+            },
+        },
     },
     services: [
         {
@@ -82,7 +87,7 @@ var klaroConfig = {
             purposes: ['content'],
             cookies: [],
             required: false,
-            default: false
+            default: false,
         },
         {
             name: 'googlerecaptcha',
@@ -90,7 +95,7 @@ var klaroConfig = {
             purposes: ['security'],
             cookies: [],
             required: true,
-            default: true
+            default: true,
         },
         {
             name: 'youtube',
@@ -98,7 +103,7 @@ var klaroConfig = {
             purposes: ['content'],
             cookies: [],
             required: false,
-            default: false
+            default: false,
         },
         {
             name: 'matomo',
@@ -106,7 +111,7 @@ var klaroConfig = {
             purposes: ['analytics'],
             cookies: [],
             required: false,
-            default: false
+            default: false,
         },
         {
             name: 'Vimeo',
@@ -114,7 +119,7 @@ var klaroConfig = {
             purposes: ['content'],
             cookies: [],
             required: false,
-            default: false
+            default: false,
         },
         {
             name: 'googlemaps',
@@ -122,7 +127,7 @@ var klaroConfig = {
             purposes: ['content'],
             cookies: [],
             required: false,
-            default: false
+            default: false,
         },
         {
             name: 'facebook',
@@ -130,7 +135,7 @@ var klaroConfig = {
             purposes: ['socialmedia'],
             cookies: [],
             required: false,
-            default: false
+            default: false,
         },
         {
             name: 'userlike',
@@ -138,7 +143,7 @@ var klaroConfig = {
             purposes: ['interaction'],
             cookies: [],
             required: false,
-            default: false
+            default: false,
         },
         {
             name: 'soundcloud',
@@ -146,7 +151,7 @@ var klaroConfig = {
             purposes: ['content'],
             cookies: [],
             required: false,
-            default: false
-        }
-    ]
+            default: false,
+        },
+    ],
 };

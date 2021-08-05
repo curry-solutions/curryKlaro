@@ -169,10 +169,10 @@ export default class PurposeItem extends React.Component {
                                         &#8593;
                                         <span className="cm-sr-only">
                                             {!config.translations[lang]
-                                                .ListStatus.closed
+                                                .listStatus.closed
                                                 ? 'Close List'
                                                 : config.translations[lang]
-                                                      .ListStatus.closed}
+                                                      .listStatus.closed}
                                         </span>
                                     </span>
                                 )) || (
@@ -180,10 +180,10 @@ export default class PurposeItem extends React.Component {
                                         &#8595;
                                         <span className="cm-sr-only">
                                             {!config.translations[lang]
-                                                .ListStatus.open
+                                                .listStatus.open
                                                 ? 'Close List'
                                                 : config.translations[lang]
-                                                      .ListStatus.open}
+                                                      .listStatus.open}
                                         </span>
                                     </span>
                                 )}{' '}

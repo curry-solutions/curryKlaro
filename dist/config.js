@@ -94,102 +94,106 @@ var klaroConfig = {
         // translationsed defined under the 'zz' language code act as default
         // translations.
         zz: {
-            privacyPolicyUrl: '/#privacy'
+            privacyPolicyUrl: '/#privacy',
         },
         // If you erase the "consentModal" translations, Klaro will use the
         // bundled translations.
         de: {
             privacyPolicyUrl: '/#datenschutz',
-            ListStatus: {
+            listStatus: {
                 open: 'Liste öffnen',
-                closed: 'Liste schließen'
+                closed: 'Liste schließen',
             },
             consentModal: {
                 description:
-                    'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.'
+                    'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',
             },
             inlineTracker: {
-                description: 'Beispiel für ein Inline-Tracking Skript'
+                description: 'Beispiel für ein Inline-Tracking Skript',
             },
             externalTracker: {
-                description: 'Beispiel für ein externes Tracking Skript'
+                description: 'Beispiel für ein externes Tracking Skript',
             },
             adsense: {
                 description: 'Anzeigen von Werbeanzeigen (Beispiel)',
-                title: 'Google AdSense Werbezeugs'
+                title: 'Google AdSense Werbezeugs',
             },
             matomo: {
-                description: 'Sammeln von Besucherstatistiken'
+                description: 'Sammeln von Besucherstatistiken',
             },
             camera: {
-                description: 'Eine Überwachungskamera (nur ein Beispiel zu IMG-Tags)'
+                description:
+                    'Eine Überwachungskamera (nur ein Beispiel zu IMG-Tags)',
             },
             cloudflare: {
-                description: 'Schutz gegen DDoS-Angriffe'
+                description: 'Schutz gegen DDoS-Angriffe',
             },
             intercom: {
-                description: 'Chat Widget & Sammeln von Besucherstatistiken (nur ein Beispiel)'
+                description:
+                    'Chat Widget & Sammeln von Besucherstatistiken (nur ein Beispiel)',
             },
             mouseflow: {
-                description: 'Echtzeit-Benutzeranalyse (nur ein Beispiel)'
+                description: 'Echtzeit-Benutzeranalyse (nur ein Beispiel)',
             },
             googleFonts: {
-                description: 'Web-Schriftarten von Google gehostet'
+                description: 'Web-Schriftarten von Google gehostet',
             },
             purposes: {
                 analytics: 'Besucher-Statistiken',
                 security: 'Sicherheit',
                 livechat: 'Live Chat',
                 advertising: 'Anzeigen von Werbung',
-                styling: 'Styling'
-            }
+                styling: 'Styling',
+            },
         },
         en: {
-            ListStatus: {
+            listStatus: {
                 open: 'Open List',
-                closed: 'Close List'
+                closed: 'Close List',
             },
             consentModal: {
                 title: '<u>test</u>',
                 description:
-                    'Here you can see and customize the information that we collect about you. Entries marked as "Example" are just for demonstration purposes and are not really used on this website.'
+                    'Here you can see and customize the information that we collect about you. Entries marked as "Example" are just for demonstration purposes and are not really used on this website.',
             },
             inlineTracker: {
-                description: 'Example of an inline tracking script'
+                description: 'Example of an inline tracking script',
             },
             externalTracker: {
-                description: 'Example of an external tracking script'
+                description: 'Example of an external tracking script',
             },
             adsense: {
                 description: 'Displaying of advertisements (just an example)',
-                title: 'Google Adsense Advertisement'
+                title: 'Google Adsense Advertisement',
             },
             matomo: {
-                description: 'Collecting of visitor statistics'
+                description: 'Collecting of visitor statistics',
             },
             camera: {
-                description: 'A surveillance camera (just an example for an IMG tag)'
+                description:
+                    'A surveillance camera (just an example for an IMG tag)',
             },
             cloudflare: {
-                description: 'Protection against DDoS attacks'
+                description: 'Protection against DDoS attacks',
             },
             intercom: {
-                description: 'Chat widget & collecting of visitor statistics (just an example)'
+                description:
+                    'Chat widget & collecting of visitor statistics (just an example)',
             },
             mouseflow: {
-                description: 'Real-Time user analytics (just an example)'
+                description: 'Real-Time user analytics (just an example)',
             },
             googleFonts: {
-                description: 'Web fonts hosted by Google'
+                description: 'Web fonts hosted by Google',
             },
             purposes: {
                 analytics: 'Analytics',
                 security: 'Security',
                 livechat: 'Livechat',
                 advertising: 'Advertising',
-                styling: 'Styling'
-            }
-        }
+                styling: 'Styling',
+            },
+        },
     },
 
     // This is a list of third-party services that Klaro will manage for you.
@@ -199,12 +203,12 @@ var klaroConfig = {
             purposes: ['marketing'],
             // Setting this to true will exempt this service from the "Accept All"
             // flow, i.e. clicking on "Accept All" will not enable this service.
-            contextualConsentOnly: true
+            contextualConsentOnly: true,
         },
         {
             name: 'youtube',
             purposes: ['marketing'],
-            contextualConsentOnly: true
+            contextualConsentOnly: true,
         },
         {
             // Each service should have a unique (and short) name.
@@ -239,7 +243,7 @@ var klaroConfig = {
                 // https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie#new-cookie_domain
                 [/^_pk_.*$/, '/', 'klaro.kiprotect.com'], //for the production version
                 [/^_pk_.*$/, '/', 'localhost'], //for the local version
-                'piwik_ignore'
+                'piwik_ignore',
             ],
 
             // An optional callback function that will be called each time
@@ -247,7 +251,12 @@ var klaroConfig = {
             // the `service` config as the second parameter as well.
             callback: function (consent, service) {
                 // This is an example callback function.
-                console.log('User consent for service ' + service.name + ': consent=' + consent);
+                console.log(
+                    'User consent for service ' +
+                        service.name +
+                        ': consent=' +
+                        consent
+                );
                 // To be used in conjunction with Matomo 'requireCookieConsent' Feature, Matomo 3.14.0 or newer
                 // For further Information see https://matomo.org/faq/new-to-piwik/how-can-i-still-track-a-visitor-without-cookies-even-if-they-decline-the-cookie-consent/
                 /*
@@ -270,7 +279,7 @@ var klaroConfig = {
 
             // If "onlyOnce" is set to true, the service will only be executed
             // once regardless how often the user toggles it on and off.
-            onlyOnce: true
+            onlyOnce: true,
         },
 
         // The services will appear in the modal in the same order as defined here.
@@ -279,36 +288,36 @@ var klaroConfig = {
             title: 'Inline Tracker',
             purposes: ['analytics'],
             cookies: ['inline-tracker'],
-            optOut: false
+            optOut: false,
         },
         {
             name: 'externalTracker',
             title: 'External Tracker',
             purposes: ['analytics', 'security'],
-            cookies: ['external-tracker']
+            cookies: ['external-tracker'],
         },
         {
             name: 'intercom',
             title: 'Intercom',
             default: true,
-            purposes: ['livechat']
+            purposes: ['livechat'],
         },
         {
             name: 'mouseflow',
             title: 'Mouseflow',
-            purposes: ['analytics']
+            purposes: ['analytics'],
         },
         {
             name: 'adsense',
             // if you omit the title here Klaro will try to look it up in the
             // translations
             //title: 'Google AdSense',
-            purposes: ['advertising']
+            purposes: ['advertising'],
         },
         {
             name: 'camera',
             title: 'Surveillance Camera',
-            purposes: ['security']
+            purposes: ['security'],
         },
         /*        {
             name: 'googleFonts',
@@ -319,7 +328,7 @@ var klaroConfig = {
             name: 'cloudflare',
             title: 'Cloudflare',
             purposes: ['security'],
-            required: true
-        }
-    ]
+            required: true,
+        },
+    ],
 };
