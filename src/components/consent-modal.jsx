@@ -35,6 +35,7 @@ export default class ConsentModal extends React.Component {
 
         if (!config.mustConsent) {
             let closeHTML;
+            const close = t(['close']);
             closeHTML = t(['!', 'closeButtonHTML'], { lang: lang });
             if (closeHTML && closeHTML !== undefined) {
                 closeLink = (
@@ -42,8 +43,8 @@ export default class ConsentModal extends React.Component {
                         dangerouslySetInnerHTML={{
                             __html: closeHTML,
                         }}
-                        title={t(['close'])}
-                        aria-label={t(['close'])}
+                        title={close}
+                        aria-label={close}
                         className="hide-custom"
                         type="button"
                         onClick={hide}
@@ -56,8 +57,8 @@ export default class ConsentModal extends React.Component {
             } else {
                 closeLink = (
                     <button
-                        title={t(['close'])}
-                        aria-label={t(['close'])}
+                        title={close}
+                        aria-label={close}
                         className="hide"
                         type="button"
                         onClick={hide}
