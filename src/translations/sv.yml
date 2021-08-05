@@ -35,6 +35,9 @@ consentNotice:
 decline: Avböj
 ok: OK
 poweredBy: Körs på Klaro!
+listStatus:
+    open: open list
+    closed: close list
 purposeItem:
     service: ''
     services: ''

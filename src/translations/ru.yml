@@ -37,6 +37,9 @@ consentNotice:
 decline: Отклонить
 ok: Принять
 poweredBy: Работает на Кларо!
+listStatus:
+    open: open list
+    closed: close list
 purposeItem:
     service: ''
     services: ''

@@ -64,10 +64,6 @@ var klaroConfig = {
         // bundled translations.
         de: {
             privacyPolicyUrl: '/#privacy',
-            listStatus: {
-                open: 'Liste öffnen',
-                closed: 'Liste schließen',
-            },
             closeButtonHTML:
                 '<button class="btn btn-outline-light icon-only"><i class="icon icon-cross2"></i></button>',
             // Put a link to your privacy policy here (relative or absolute).
@@ -125,10 +121,6 @@ var klaroConfig = {
             },
         },
         en: {
-            listStatus: {
-                open: 'Open List',
-                closed: 'Close List',
-            },
             consentModal: {
                 title: 'Titel',
                 description:

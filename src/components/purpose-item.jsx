@@ -168,22 +168,14 @@ export default class PurposeItem extends React.Component {
                                     <span>
                                         &#8593;
                                         <span className="cm-sr-only">
-                                            {!config.translations[lang]
-                                                .listStatus.closed
-                                                ? 'Close List'
-                                                : config.translations[lang]
-                                                      .listStatus.closed}
+                                            {t(['listStatus', 'closed'])}
                                         </span>
                                     </span>
                                 )) || (
                                     <span>
                                         &#8595;
                                         <span className="cm-sr-only">
-                                            {!config.translations[lang]
-                                                .listStatus.open
-                                                ? 'Close List'
-                                                : config.translations[lang]
-                                                      .listStatus.open}
+                                            {t(['listStatus', 'open'])}
                                         </span>
                                     </span>
                                 )}{' '}

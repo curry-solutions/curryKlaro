@@ -25,6 +25,9 @@ poweredBy: Realized with Klaro!
 privacyPolicy:
     name: privacy policy
     text: To learn more, please read our {privacyPolicy}.
+listStatus:
+    open: open list
+    closed: close list
 purposeItem:
     service: service
     services: services

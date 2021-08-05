@@ -41,6 +41,9 @@ consentNotice:
 decline: Απόρριπτω
 ok: OK
 poweredBy: Υποστηρίζεται από το Klaro!
+listStatus:
+    open: open list
+    closed: close list
 purposeItem:
     service: ''
     services: ''

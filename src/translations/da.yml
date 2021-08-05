@@ -32,6 +32,9 @@ consentNotice:
 decline: Afvis
 ok: Ok
 poweredBy: Realiseret med Klaro!
+listStatus:
+    open: open list
+    closed: close list
 purposeItem:
     service: ''
     services: ''

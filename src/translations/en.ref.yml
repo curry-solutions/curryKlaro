@@ -7,8 +7,11 @@ consentModal:
 consentNotice:
     testing: Testing mode!
     changeDescription: There were changes since your last visit, please renew your consent.
-    description: "Hi! Could we please enable some additional services for {purposes}? You can always change or withdraw your consent later."
+    description: 'Hi! Could we please enable some additional services for {purposes}? You can always change or withdraw your consent later.'
     learnMore|capitalize: Let me choose
+listStatus:
+    open|capitalize: open list
+    closed|capitalize: close list
 purposes:
     functional:
         title|capitalize: Service Provision
@@ -17,10 +20,10 @@ purposes:
     performance:
         title|capitalize: Performance Optimization
         description: |
-          These services process personal information to optimize the service that this website offers.
+            These services process personal information to optimize the service that this website offers.
     marketing:
         title|capitalize: Marketing
-        description: These services process personal information to show you relevant content about products, services or topics that you might be interested in. 
+        description: These services process personal information to show you relevant content about products, services or topics that you might be interested in.
     advertising:
         title|capitalize: Advertising
         description: These services process personal information to show you personalized or interest-based advertisements.

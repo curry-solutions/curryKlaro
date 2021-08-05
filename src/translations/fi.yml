@@ -37,6 +37,9 @@ consentNotice:
 decline: Hylkää
 ok: Hyväksy
 poweredBy: Palvelun tarjoaa Klaro!
+listStatus:
+    open: open list
+    closed: close list
 purposeItem:
     service: ''
     services: ''

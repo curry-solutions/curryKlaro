@@ -36,6 +36,9 @@ poweredBy: Realisiert mit curryKlaro!
 privacyPolicy:
     name: Datenschutzerklärung
     text: Um mehr zu erfahren, lesen Sie bitte unsere {privacyPolicy}.
+listStatus:
+    open: Liste öffnen
+    closed: Liste schließen
 purposeItem:
     service: Dienst
     services: Dienste

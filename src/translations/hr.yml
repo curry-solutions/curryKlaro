@@ -37,6 +37,9 @@ consentNotice:
 decline: Odbij
 ok: U redu
 poweredBy: Pokreće Klaro!
+listStatus:
+    open: open list
+    closed: close list
 purposeItem:
     service: ''
     services: ''

@@ -37,6 +37,9 @@ consentNotice:
 decline: Mentés
 ok: Elfogad
 poweredBy: Powered by Klaro!
+listStatus:
+    open: open list
+    closed: close list
 purposeItem:
     service: ''
     services: ''

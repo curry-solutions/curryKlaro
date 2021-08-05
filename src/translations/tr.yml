@@ -35,6 +35,9 @@ consentNotice:
 decline: Reddet
 ok: Tamam
 poweredBy: Klaro tarafından geliştirildi!
+listStatus:
+    open: open list
+    closed: close list
 purposeItem:
     service: ''
     services: ''

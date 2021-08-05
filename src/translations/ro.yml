@@ -40,6 +40,9 @@ consentNotice:
 decline: Renunță
 ok: OK
 poweredBy: Realizat de Klaro!
+listStatus:
+    open: open list
+    closed: close list
 purposeItem:
     service: ''
     services: ''

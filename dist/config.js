@@ -100,10 +100,6 @@ var klaroConfig = {
         // bundled translations.
         de: {
             privacyPolicyUrl: '/#datenschutz',
-            listStatus: {
-                open: 'Liste öffnen',
-                closed: 'Liste schließen',
-            },
             consentModal: {
                 description:
                     'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',
@@ -147,10 +143,6 @@ var klaroConfig = {
             },
         },
         en: {
-            listStatus: {
-                open: 'Open List',
-                closed: 'Close List',
-            },
             consentModal: {
                 title: '<u>test</u>',
                 description:

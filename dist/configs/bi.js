@@ -14,10 +14,6 @@ var klaroConfig = {
     translations: {
         de: {
             privacyPolicyUrl: '/datenschutz',
-            listStatus: {
-                open: 'Liste öffnen',
-                closed: 'Liste schließen',
-            },
             consentModal: {
                 title: 'Wir verwenden folgende Drittanbieteranwendungen',
                 description:

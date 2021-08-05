@@ -36,6 +36,9 @@ consentNotice:
 decline: Rebutja
 ok: Accepta
 poweredBy: Funciona amb Klaro!
+listStatus:
+    open: open list
+    closed: close list
 purposeItem:
     service: aplicació
     services: aplicacions
