@@ -14,7 +14,9 @@ export default class ConsentNotice extends React.Component {
     }
 
     componentDidMount() {
-        this.noticeRef.focus();
+        if (this.noticeRef) {
+            this.noticeRef.focus();
+        }
     }
 
     componentDidUpdate(prevProps) {
@@ -115,6 +117,12 @@ export default class ConsentNotice extends React.Component {
             document.body.classList.remove('modal-open');
             if (manager.confirmed && !testing) this.props.hide();
             else this.setState({ modal: false });
+
+            setTimeout(() => {
+                if (this.noticeRef) {
+                    this.noticeRef.focus();
+                }
+            }, 1);
         };
 
         let changesText;
@@ -221,6 +229,7 @@ export default class ConsentNotice extends React.Component {
                 role="dialog"
                 aria-describedby="id-cookie-notice"
                 aria-labelledby="id-cookie-title"
+                id="curryKlaro-cookie-notice"
                 className={`cookie-notice ${
                     !noticeIsVisible && !testing ? 'cookie-notice-hidden' : ''
                 } ${noticeAsModal ? 'cookie-modal-notice' : ''} ${
