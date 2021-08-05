@@ -7,16 +7,8 @@ import Text from './text';
 export default class ConsentModal extends React.Component {
     constructor(props) {
         super(props);
-        this.button = React.createRef();
-        this.focusButton = this.focusButton.bind(this);
         const { manager } = props;
         manager.restoreSavedConsents();
-    }
-    componentDidMount() {
-        this.focusButton();
-    }
-    focusButton() {
-        this.button.current.focus();
     }
 
     render() {
@@ -60,7 +52,6 @@ export default class ConsentModal extends React.Component {
                         className="hide"
                         type="button"
                         onClick={hide}
-                        ref={this.button}
                         tabIndex="0"
                     >
                         <Close t={t} />
