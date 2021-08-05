@@ -226,6 +226,8 @@ export default class ConsentNotice extends React.Component {
                 } ${noticeAsModal ? 'cookie-modal-notice' : ''} ${
                     embedded ? 'cn-embedded' : ''
                 }`}
+                tabIndex="0"
+                autoFocus
                 ref={(div) => {
                     this.noticeRef = div;
                 }}
