@@ -1,8 +1,35 @@
-@import './modal';
-@import './vars';
+@import 'modal';
+@import 'vars';
+
+%btn-blue {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.4375rem 0.875rem;
+    //font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 2px;
+
+    background-color: $primary;
+    border-color: $primary;
+    &:hover {
+        background-color: $primary-lighter;
+        border-color: $primary-lighter;
+    }
+    &.disabled,
+    &:disabled {
+        opacity: 1; // Standard Opacity sieht bei der Map blöd aus
+        background-color: mix(lightgrey, $primary, 50%);
+        cursor: default;
+    }
+}
 
 .klaro {
-    @import 'floating-button.scss';
+    @import 'floating-button';
 
     $btn-margin-right: 0.5em;
 
@@ -34,7 +61,7 @@
         h2,
         ul,
         li {
-            // font-family: inherit;
+            font-family: inherit;
             @include var(color, 'font-color-dark');
         }
 
@@ -47,7 +74,7 @@
             text-align: left;
             margin: 0;
             padding: 0;
-            margin-top: 0.7em;
+            margin-top: 1.3em;
         }
 
         .cm-link {
@@ -56,36 +83,31 @@
         }
 
         .cm-btn {
-            @include var(color, 'font-color-dark');
-
-            background: #555;
-            border-radius: 6px;
-            padding: 6px 10px;
-            margin-right: $btn-margin-right;
-            border: 0;
-            padding: 0.4em;
-            font-size: 1em;
-            cursor: pointer;
+            @extend %btn-blue;
 
             &:disabled {
-                opacity: 0.5;
+                @extend %btn-blue;
             }
 
             &.cm-btn-close {
-                background: $cm-gray-medium;
-                color: #000;
+                @extend %btn-blue;
             }
 
             &.cm-btn-success {
-                @include var(background, 'green1');
+                @extend %btn-blue;
             }
 
             &.cm-btn-success-var {
-                @include var(background, 'green2');
+                @extend %btn-blue;
             }
 
             &.cm-btn-info {
-                @include var(background, 'blue1');
+                @extend %btn-blue;
+            }
+
+            &.cm-btn-decline,
+            &.cm-btn-danger {
+                //@extend .btn-outline-secondary;
             }
         }
     }
@@ -157,7 +179,7 @@
 
         .cm-modal {
             &.cm-klaro {
-                @include modal(660px, 640px);
+                @include modal(660px, 800px);
             }
 
             .hide {
@@ -165,7 +187,7 @@
                 background: none;
                 position: absolute;
                 top: 20px;
-                right: 20px;
+                right: 18px;
                 z-index: 1;
                 cursor: pointer;
 
@@ -184,14 +206,14 @@
 
             .cm-footer {
                 padding: 1em map-get($cm-whitespace, lg)
-                    map-get($cm-whitespace, lg) + 20px;
+                    map-get($cm-whitespace, lg) + 10px;
                 @media (max-width: $cm-tablet) {
                     padding: 1em map-get($cm-whitespace, md)
-                        map-get($cm-whitespace, md) + 20px;
+                        map-get($cm-whitespace, md) + 10px;
                 }
                 @media (max-width: $cm-mobile) {
                     padding: 1em map-get($cm-whitespace, sm)
-                        map-get($cm-whitespace, sm) + 20px;
+                        map-get($cm-whitespace, sm) + 10px;
                 }
 
                 border-top: $cm-border-dark;
@@ -199,23 +221,35 @@
                 &-buttons {
                     display: flex;
                     flex-flow: row;
-                    justify-content: space-between;
+                    justify-content: flex-end;
+
+                    @media (max-width: $cm-tablet) {
+                        justify-content: space-between;
+                        flex-flow: column;
+                        .cm-btn {
+                            margin-bottom: 1rem;
+                        }
+                    }
                 }
 
                 .cm-powered-by {
-                    font-size: 0.8em;
-                    padding-top: 4px;
-                    text-align: right;
-                    padding-right: 8px;
+                    position: relative;
+                    margin-left: auto;
+                    margin-right: auto;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+                    margin-top: 0;
+                    color: $cm-font-color-dark-deemphasized;
 
-                    bottom: 1rem;
+                    bottom: map-get($cm-whitespace, lg) * -1;
 
                     @media (max-width: $cm-tablet) {
-                        bottom: auto;
+                        bottom: map-get($cm-whitespace, md) * -1;
                     }
 
-                    a {
-                        color: $cm-font-color-dark-deemphasized;
+                    @media (max-width: $cm-mobile) {
+                        bottom: map-get($cm-whitespace, sm) * -1;
                     }
                 }
             }
@@ -243,10 +277,20 @@
                     margin: 0;
                     font-size: 2em;
                     display: block;
+                    line-height: 1.4;
+                    color: $cm-blue1;
 
                     &.title {
                         padding-right: 20px;
                         word-wrap: break-word;
+                    }
+                }
+
+                p {
+                    width: 100%;
+                    font-size: 1.1rem;
+                    @media (min-width: $cm-tablet) {
+                        font-size: 1.2rem;
                     }
                 }
             }
@@ -280,9 +324,9 @@
                                 color: #888;
 
                                 a {
-                                    &:focus {
-                                        outline: none;
-                                    }
+                                    // &:focus {
+                                    //     outline: none;
+                                    // }
                                     :-moz-focus-inner {
                                         border: 0;
                                     }
@@ -290,14 +334,16 @@
                             }
 
                             .cm-content {
-                                margin-left: -40px;
+                                margin-left: -60px;
                                 display: none;
                                 display: block;
                                 overflow: hidden;
                                 max-height: 0;
-                                margin-top: 30px;
+                                margin-top: 15px;
+                                margin-bottom: 15px;
                                 transition: max-height 0.5s
-                                    cubic-bezier(0, 1, 0, 1);
+                                        cubic-bezier(0, 1, 0, 1),
+                                    margin-bottom 0.5s cubic-bezier(0, 1, 0, 1);
 
                                 .cm-switch {
                                     transform: scale(0.8);
@@ -305,7 +351,12 @@
 
                                 &.expanded {
                                     max-height: 1000px;
-                                    transition: max-height 1s ease-in-out;
+                                    transition: max-height 0.5s ease-in-out,
+                                        margin-bottom 0.5s ease-in-out;
+                                    margin-bottom: 40px;
+                                }
+                                .cm-service {
+                                    padding-left: 72px;
                                 }
                             }
                         }
@@ -316,7 +367,7 @@
                         position: relative;
                         line-height: 20px;
                         vertical-align: middle;
-                        padding-left: 60px;
+                        padding-left: map-get($cm-whitespace, lg);
                         min-height: 40px;
 
                         &:first-child {
@@ -334,6 +385,7 @@
 
                         &.cm-toggle-all {
                             border-top: $cm-border-dark;
+                            padding-top: 0em;
                             margin-top: 3em;
                         }
 
@@ -344,7 +396,7 @@
 
                         span.cm-opt-out,
                         span.cm-required {
-                            padding-left: 0.2em;
+                            padding-left: 0.6em;
                             font-size: 0.8em;
                             color: $cm-font-color-dark-deemphasized;
                             display: inline;
@@ -358,7 +410,7 @@
     .cookie-notice:not(.cookie-modal-notice) {
         background: $cm-bg-dark;
         z-index: 999;
-
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
         position: fixed;
         width: 100%;
         bottom: 0;
@@ -376,6 +428,12 @@
         @media (max-width: ($cm-desktop - 1)) {
             border-style: none;
             border-radius: 0;
+        }
+
+        @media (min-width: 990px) and (max-width: 1159px) {
+            bottom: 67px;
+            right: 125px;
+            max-width: 370px; //300px
         }
 
         &.cn-embedded {
@@ -421,8 +479,9 @@
                     width: 100%;
                 }
 
-                button.btn {
-                    margin-top: 0.5em;
+                button.cm-btn {
+                    margin-top: 0;
+                    margin-left: 0.5em;
 
                     @media (max-width: $cm-mobile) {
                         width: calc(50% - #{$btn-margin-right});
@@ -467,8 +526,24 @@
     .cookie-notice-hidden {
         display: none !important;
     }
+
+    .cm-sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
 }
 
 body.modal-open {
     overflow: hidden;
+    padding-right: var(--scrollbar-width) !important;
+    .top-bar {
+        padding-right: var(--scrollbar-width) !important;
+    }
 }

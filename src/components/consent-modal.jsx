@@ -42,6 +42,7 @@ export default class ConsentModal extends React.Component {
                         className="hide-custom"
                         type="button"
                         onClick={hide}
+                        tabIndex="0"
                     ></div>
                 );
             } else {
@@ -51,6 +52,7 @@ export default class ConsentModal extends React.Component {
                         className="hide"
                         type="button"
                         onClick={hide}
+                        tabIndex="0"
                     >
                         <Close t={t} />
                     </button>
@@ -67,6 +69,7 @@ export default class ConsentModal extends React.Component {
                     className="cm-btn btn btn-secondary cm-btn-decline cm-btn-danger cn-decline"
                     type="button"
                     onClick={declineAndHide}
+                    tabIndex="0"
                 >
                     {t(['decline'])}
                 </button>
@@ -131,16 +134,21 @@ export default class ConsentModal extends React.Component {
             );
 
         const innerModal = (
-            <div className="cm-modal cm-klaro">
+            <div
+                className="cm-modal cm-klaro"
+                role="dialog"
+                aria-labelledby="cookie-modal-header"
+                aria-describedby="cookie-modal-description"
+            >
                 <div className="cm-header">
                     {closeLink}
-                    <h1 className="title">
+                    <h2 className="title" id="cookie-modal-header">
                         <Text
                             config={config}
                             text={t(['consentModal', 'title'])}
                         />
-                    </h1>
-                    <p>
+                    </h2>
+                    <p id="cookie-modal-description">
                         <Text
                             config={config}
                             text={[t(['consentModal', 'description'])].concat(

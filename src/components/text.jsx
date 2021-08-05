@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Text = ({ text, config }) => {
+const Text = ({id, text, config }) => {
     if (!(text instanceof Array))
         text = [text]
     if (config.htmlTexts === true) {
@@ -18,7 +18,7 @@ const Text = ({ text, config }) => {
             return textElement;
         });
         if (wrapped) return <React.Fragment>{elements}</React.Fragment>;
-        else return <span>{elements}</span>;
+        else return <span id={id}>{elements}</span>;
     } else return <span>{text}</span>;
 };
 

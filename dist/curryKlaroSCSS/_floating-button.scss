@@ -1,0 +1,54 @@
+/* The Floating-Button */
+.floating-button {
+  display: block;
+  z-index: 999;
+
+  position: fixed;
+  transition: all 0.2s;
+  cursor: pointer;
+  bottom: 0;
+  right: $cookie-notice-right;
+  box-shadow: $cm-box-shadow-light-sm;
+  border-top-left-radius: $cm-border-radius;
+  border-top-right-radius: $cm-border-radius;
+  text-decoration: none;
+  max-width: 300px;
+  border: $cm-border-dark;
+  color: gray;
+  border-bottom-color: rgb(187, 187, 187);
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom: none;
+  background: $cm-bg-dark;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 7px 14px;
+
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+
+  @media (max-width: 1159px) {
+    bottom: 300px;
+    right: -70px;
+    -webkit-transform: rotate(-90deg) !important;
+    transform: rotate(-90deg) !important;
+  }
+
+  &.is-active,
+  &:hover,
+  &:active {
+    background-color: $cm-tab-color;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+  }
+  &:hover,
+  &:focus {
+    background-color: $cm-tab-color-hover;
+  }
+  &:active {
+    background-color: $cm-tab-color-hover;
+  }
+}
+
+.floating-button-hidden {
+  display: none !important;
+}
