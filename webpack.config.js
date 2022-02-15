@@ -10,11 +10,15 @@ const NO_MINIFY_CSS = process.env.NO_MINIFY_CSS !== undefined;
 const APP_DEV_MODE = APP_ENV === 'dev' && process.env.APP_DEV_MODE;
 const STYLE_FILES = /\.(sa|sc|c)ss$/;
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-    .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin =
+    require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function withEnvSourcemap(loader) {
-    return APP_ENV === 'dev' ? loader + '?sourceMap' : loader;
+    if (APP_ENV === 'dev') {
+        // return loader + '?sourceMap';
+        return loader;
+    }
+    return loader;
 }
 
 let config = {
@@ -76,15 +80,15 @@ if (SEPARATE_CSS) {
         use: [
             {
                 loader: MiniCssExtractPlugin.loader,
-                options: {
-                    hmr: APP_ENV === 'dev',
-                    // reloadAll: true,
-                },
+                // options: {
+                //     // hmr: APP_ENV === 'dev',
+                //     // reloadAll: true,
+                // },
             },
             withEnvSourcemap('css-loader'),
             withEnvSourcemap({
                 loader: 'postcss-loader',
-                options: { config: { path: 'postcss.config.js' } },
+                options: { postcssOptions: { path: 'postcss.config.js' } },
             }),
             withEnvSourcemap({
                 loader: 'sass-loader',
@@ -111,7 +115,7 @@ if (SEPARATE_CSS) {
                 loader: 'postcss-loader',
                 options: {
                     sourceMap: true,
-                    config: {
+                    postcssOptions: {
                         path: 'postcss.config.js',
                     },
                 },
@@ -125,7 +129,7 @@ if (SEPARATE_CSS) {
 if (APP_ENV === 'dev') {
     config = {
         ...config,
-        devtool: 'inline-source-maps',
+        devtool: 'inline-source-map',
         plugins: [
             ...config.plugins,
             new webpack.DefinePlugin({
@@ -144,10 +148,12 @@ if (APP_DEV_MODE === 'server') {
             hot: true,
 
             // match the output path
-            contentBase: ['dist'],
+            static: {
+                directory: path.join(__dirname, 'dist'),
+            },
 
             // match the output `publicPath`
-            publicPath: '',
+            // publicPath: '',
             // always render index.html if the document does not exist (we need this for correct routing)
             historyApiFallback: true,
 
@@ -166,14 +172,9 @@ if (APP_DEV_MODE === 'server') {
                 'Access-Control-Allow-Headers':
                     'X-Requested-With, content-type, Authorization',
             },
-
-            disableHostCheck: true,
+            allowedHosts: 'all',
         },
-        plugins: [
-            ...config.plugins,
-            new webpack.HotModuleReplacementPlugin(),
-            new webpack.NamedModulesPlugin(),
-        ],
+        plugins: [...config.plugins, new webpack.HotModuleReplacementPlugin()],
     };
 }
 
@@ -199,7 +200,6 @@ if (APP_ENV === 'production') {
                         'unknown'
                 ),
             }),
-            new webpack.optimize.OccurrenceOrderPlugin(),
             new webpack.optimize.AggressiveMergingPlugin(),
         ],
     };
