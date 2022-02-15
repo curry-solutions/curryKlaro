@@ -26,6 +26,7 @@ export default class ConsentNotice extends React.Component {
 
     executeButtonClicked = (setChangedAll, changedAllValue, eventType) => {
         const { modal } = this.state;
+        const triggerElement = sessionStorage.getItem('triggerElement');
 
         let changedServices = 0;
 
@@ -53,6 +54,10 @@ export default class ConsentNotice extends React.Component {
             }
         } else {
             this.props.hide();
+        }
+        if (triggerElement && triggerElement.length) {
+            window.setTimeout(() => document.getElementById(triggerElement).focus(), 1);
+            sessionStorage.removeItem('triggerElement');
         }
     };
 
@@ -110,19 +115,23 @@ export default class ConsentNotice extends React.Component {
         const showModal = (e) => {
             e.preventDefault();
             this.setState({ modal: true });
+            sessionStorage.setItem('triggerElement', document.activeElement.id);
         };
 
         const hideModal = () => {
+            const triggerElement = sessionStorage.getItem('triggerElement');
             if (config.mustConsent && !config.acceptAll) return;
             document.body.classList.remove('modal-open');
             if (manager.confirmed && !testing) this.props.hide();
             else this.setState({ modal: false });
+            window.setTimeout(() => document.getElementById(triggerElement).focus(), 1);
+            sessionStorage.removeItem('triggerElement');
 
-            setTimeout(() => {
-                if (this.noticeRef) {
-                    this.noticeRef.focus();
-                }
-            }, 1);
+            // setTimeout(() => {
+            //     if (this.noticeRef) {
+            //         this.noticeRef.focus();
+            //     }
+            // }, 1);
         };
 
         let changesText;
@@ -188,6 +197,7 @@ export default class ConsentNotice extends React.Component {
                 <a
                     key="learnMoreLink"
                     className="cm-link cn-learn-more"
+                    id="cn-learn-more"
                     href="#"
                     onClick={showModal}
                 >

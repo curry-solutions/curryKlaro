@@ -15,6 +15,7 @@ export default class FloatingButton extends React.Component {
         const showModal = (e) => {
             e.preventDefault();
             klaro.show();
+            sessionStorage.setItem('triggerElement', e.target.id);
         };
 
         if (!show) return <div />;
@@ -27,6 +28,7 @@ export default class FloatingButton extends React.Component {
                 className={`floating-button ${
                     !noticeIsVisible ? 'floating-button-hidden' : ''
                 }`}
+                id="floating-button"
                 onClick={showModal}
             >
                 {t(['floatingButtonTitle'])}
