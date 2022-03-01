@@ -14,11 +14,7 @@ const BundleAnalyzerPlugin =
     require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function withEnvSourcemap(loader) {
-    if (APP_ENV === 'dev') {
-        // return loader + '?sourceMap';
-        return loader;
-    }
-    return loader;
+    return APP_ENV === 'dev' ? loader + '?sourceMap' : loader;
 }
 
 let config = {
@@ -85,24 +81,30 @@ if (SEPARATE_CSS) {
                 //     // reloadAll: true,
                 // },
             },
-            withEnvSourcemap('css-loader'),
+            {
+                loader: 'css-loader',
+                options: {
+                    sourceMap: APP_ENV === 'dev',
+                },
+            },
             withEnvSourcemap({
                 loader: 'postcss-loader',
                 options: { postcssOptions: { path: 'postcss.config.js' } },
             }),
-            withEnvSourcemap({
+            {
                 loader: 'sass-loader',
                 options: {
                     sassOptions: {
+                        sourceMap: APP_ENV === 'dev',
                         outputStyle: NO_MINIFY_CSS ? 'expanded' : 'compressed',
                     },
                 },
-            }),
+            },
         ],
     });
     config.plugins.push(
         new MiniCssExtractPlugin({
-            filename: NO_MINIFY_CSS ? 'curryKlaro.css' : 'curryKlaro.min.css',
+            filename: NO_MINIFY_CSS ? 'klaro.css' : 'klaro.min.css',
         })
     );
 } else {
@@ -110,7 +112,12 @@ if (SEPARATE_CSS) {
         test: STYLE_FILES,
         use: [
             'style-loader',
-            withEnvSourcemap('css-loader'),
+            {
+                loader: 'css-loader',
+                options: {
+                    sourceMap: APP_ENV === 'dev',
+                },
+            },
             {
                 loader: 'postcss-loader',
                 options: {
@@ -121,7 +128,14 @@ if (SEPARATE_CSS) {
                 },
             },
             // withEnvSourcemap({loader: 'postcss-loader', options: {config: {path: 'postcss.config.js'}}}),
-            withEnvSourcemap('sass-loader'),
+            {
+                loader: 'sass-loader',
+                options: {
+                    sassOptions: {
+                        sourceMap: APP_ENV === 'dev',
+                    },
+                },
+            },
         ],
     });
 }
@@ -143,7 +157,6 @@ if (APP_DEV_MODE === 'server') {
     config = {
         ...config,
         devServer: {
-            open: true,
             // enable Hot Module Replacement on the server
             hot: true,
 
@@ -156,6 +169,10 @@ if (APP_DEV_MODE === 'server') {
             // publicPath: '',
             // always render index.html if the document does not exist (we need this for correct routing)
             historyApiFallback: true,
+
+            client: {
+                overlay: true,
+            },
 
             proxy: {
                 '/api': {
@@ -174,7 +191,7 @@ if (APP_DEV_MODE === 'server') {
             },
             allowedHosts: 'all',
         },
-        plugins: [...config.plugins, new webpack.HotModuleReplacementPlugin()],
+        plugins: [...config.plugins],
     };
 }
 
@@ -214,7 +231,7 @@ const klaroWithTranslationsConfig = {
     ...{
         output: {
             path: BUILD_DIR,
-            filename: SEPARATE_CSS ? 'curryKlaro-no-css.js' : 'curryKlaro.js',
+            filename: SEPARATE_CSS ? 'klaro-no-css.js' : 'klaro.js',
             library: 'klaro',
             libraryTarget: 'umd',
             publicPath: '',
@@ -231,8 +248,8 @@ const klaroWithoutTranslationsConfig = {
         output: {
             path: BUILD_DIR,
             filename: SEPARATE_CSS
-                ? 'curryKlaro-no-translations-no-css.js'
-                : 'curryKlaro-no-translations.js',
+                ? 'klaro-no-translations-no-css.js'
+                : 'klaro-no-translations.js',
             library: 'klaro',
             libraryTarget: 'umd',
             publicPath: '',
